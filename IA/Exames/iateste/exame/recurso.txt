@@ -1,0 +1,71 @@
+I
+
+1.
+	a) x -> lista
+	   y -> função - retorna valor booleano
+
+	- Caso x seja lista vazia retorna None
+	- z assume o valor de retorno da função f com os argumentos x[1:] (lista x sem o primeiro valor da lista) e y
+	- Caso z tenha o valor None ou o retorno da função y com os argumentos x[0] (primeiro valor da lista x) e z) seja True, f retorna x[0]
+	- Caso contrário retorna z
+
+	- Para x = [1, 2, 3] e y = lambda x, y: x < y
+	- f(x, y)
+		|- z = f(x[1:], y) <- x[1:] = [2, 3]
+		|	|
+		|	|- z = f([3], y) <- x[1:] = [3]
+		|	|	|
+		|	|	|- z = f([], y) <- x[1:] = []
+		|	|	|	|
+		|	|	|	|- return None
+		|	|	|- z = None
+		|	|	|- return x[0] <- 3
+		|	|- z = 3
+		|	|- y(x[0], z) = True
+		|	|- return x[0] <- 2
+		|- z = 2
+		|- y(x[0], z) = True
+		|- return x[0] <- 1
+
+	- Ou seja f compara todos os valores da lista x com base no resultado booleano da função y
+
+
+	b) x, y -> lista
+
+	- Caso x e y sejam listas vazias retorna [] (lista vazia)
+	- Caso x e y não sejam listas vazias z recebe o valor de retorna da função g para os valores x[1:] e y[1:] (lista x e lista y sem os respectivos primeiros 	índices), após isto caso o valor de z seja diferente de None a função retorna uma lista do tuplo (x[0], y[0]) e z, em que x[0] e y[0] são os valores no 	primeiro índice de x e y, e z consequentemente será uma lista.
+
+	- Para x = [1, 2, 3] e y = [4, 5, 6]
+	- g(x, y)
+		|- z = g(x[1:], y[1:]) <- x[1:] = [2, 3] e y[1:] = [5, 6]
+		|	|
+		|	|- z = g(x[1:], y[1:]) <- x[1:] = [3] e y[1:] = [6]
+		|	|	|
+		|	|	|- z = g(x[1:], y[1:]) <- x[1:] = [] e y[1:] = []
+		|	|	|	|
+		|	|	|	|- return []
+		|	|	|- z = []
+		|	|	|- return [(x[0], y[0])] + z = [(3, 6)] + [] = [(3, 6)]
+		|	|- z = [(3, 6)]
+		|	|- return [(x[0], y[0])] + z = [(2, 5)] + [(3, 6)] = [(2, 5), (3, 6)]
+		|- z = [(2, 5), (3, 6)]
+		|- - return [(x[0], y[0])] + z = [(1, 4)] + [(2, 5), (3, 6)] = [(1, 4), (2, 5), (3, 6)]
+
+	- Ou seja, para listas com o mesmo tamanho g gera uma lista de tuplos em que no índice i se encontram os valores de x e y nesse mesmo índice.
+
+II
+
+1.
+	d) Pesquisa A*, guardando os pontos que o robô percorre e no fim calculando o percurso com o custo mínimo (neste caso o custo seria a distância entre os pontos 	guardados). O robô percorreria esse percurso que seria o mais próximo do percurso óptimo.
+
+
+
+
+
+
+
+
+
+
+
+
