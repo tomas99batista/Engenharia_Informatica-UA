@@ -1,0 +1,5 @@
+Tipo	Nome	Preco	Calorias	Data	Gordura
+1	Iogurte Natural Danone	1.48	56	07/06/2015	4.0
+3	Coca Cola	1.12	300	15/09/2017
+1	Leite UHT Meio Gordo Mimosa	0.64	46	20.06.2015	1.7
+2	Nestlé Fitness	1.59	200	15.09.2015

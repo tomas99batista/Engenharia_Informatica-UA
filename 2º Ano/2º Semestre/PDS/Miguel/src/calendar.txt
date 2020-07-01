@@ -1,0 +1,5 @@
+A classe Calendar utiliza o padrão de criação Factory.
+Existem metodos estaticos que retornam objetos da classe Calendar. (e.g createCalendar())
+Ao contrario dos construtores, estes metodos permitem que sejam retornadas instancias de uma subclasse,
+o que acontece por exemplo no metodo createCalendar(), onde podem ser retornados JapaneseImperialCalendar
+ou GregorianCalendar.

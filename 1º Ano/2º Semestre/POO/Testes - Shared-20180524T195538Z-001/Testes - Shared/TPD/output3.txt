@@ -1,0 +1,6 @@
+Loja do Zé, Morada:Rua Domingos Carrancho, 15, 3800-145 Aveiro
+[Refrigerante] Nome:Nestlé Fitness, Validade:15.09.2015, Preço:1.59, Calorias:200, Contituição:ARROZ_TRIGO
+[Lacteo] Nome:Iogurte Natural Danone, Validade:07.06.2015, Preço:1.48, Calorias:56, Gordura:4.0, Tª Max:4, Tª Min:6
+[Lacteo] Nome:Leite UHT Meio Gordo Mimosa, Validade:20.06.2015, Preço:0.64, Calorias:46, Gordura:1.7, Tª Max:5, Tª Min:3
+[Refrigerante] Nome:Cola Cola, Validade:15.09.2015, Preço:1.12, Calorias:300, Tª Max:5, Tª Min:3
+

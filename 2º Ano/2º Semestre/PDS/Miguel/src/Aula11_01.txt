@@ -1,0 +1,14 @@
+﻿A) Strategy, Template Method.
+Nota: para o template, o template só é utilizado em classes abstratas. O cliente não utiliza a classe abstrata.
+Por isso não
+
+
+O Chain permite compor a cadeia com os algoritmos já feitos.
+O strategy permite fazero algorimo apoiado em clases já feitas.
+~~Talvez possivelmente também o Chain of Responsability mas levaria a que se fosse levado ao extremo pois não faz muito sentido mudarmos um atributo e estarmos a percorrer a cadeia toda até ao fim~~
+
+
+interface SortMethod{
+	sort(Telemovel[], Comparator);
+}
+

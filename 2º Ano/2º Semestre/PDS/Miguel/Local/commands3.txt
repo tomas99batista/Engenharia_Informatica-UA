@@ -1,0 +1,12 @@
+add mikey 4 7
+add Ana_98 4 7
+add falB 5 6
+add rui 10 17
+add wx1 10 17
+add nola 10 12
+add mikey@ua.pt 11 14
+add pete 16 18
+add silvia 16 18
+add sergi 16 18
+map
+quit

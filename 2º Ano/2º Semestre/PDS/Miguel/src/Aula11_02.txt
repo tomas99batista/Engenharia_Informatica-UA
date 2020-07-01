@@ -1,0 +1,27 @@
+
+Template methods no java.util.AbstractMap: 
+ - size
+ - isEmpty
+ - containsValue
+ - get
+ - put
+ - remove
+ - putAll
+ - clear
+ - keySet
+ - values
+ - clone
+ - equals
+ - hashCode
+ - toString
+
+Template methods no java.io.Reader: 
+ - read (as variações de leitura de 1 caracter e da leitura de vários caracteres para 1 array, não a com 3 argumentos)
+
+ - skip
+ - ready
+ - mark
+ - reset 
+
+Template methods no java.io.InputStream: 
+- Todos os métodos exceto o read() de um único byte

@@ -1,0 +1,17 @@
+-- MySQL --
+
+String url = "jdbc:mysql://localhost:3306/basedados";
+
+Class.forName("com.mysql.jdbc.Driver");
+        
+-- Oracle --
+
+String urlDentroIPG = "jdbc:oracle:thin:scott/tiger@192.168.23.32:1521:test";
+String urlForaIPG = "jdbc:oracle:thin:scott/tiger@193.137.232.45:1521:test";	
+
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+-- SQLite --
+
+String url = "jdbc:sqlite:BaseDados.db";
+Class.forName("org.sqlite.JDBC");	
