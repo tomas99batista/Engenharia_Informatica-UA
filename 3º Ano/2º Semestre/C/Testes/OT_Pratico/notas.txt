@@ -1,0 +1,11 @@
+- devemos abstrair a gramatica, olhando para o codigo fonte
+
+- e melhor para especificarmos terminadores nas linguagens (quando e que algo para)
+    - tambem serve para resincronizar codigo
+
+regras sem alias, temos de fazer o parsing: o visitor tem um metodo para cada alternativa
+
+
+um semCheck e um Execute
+
+-i -> partir o codigo em linhas
