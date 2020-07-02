@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap Starter Template</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <br>
+    <br>
+    <div class="container" style="margin: 0 0 0 35%;width: 345px;">
+        <br><br><br><br><br>
+        <div class="row">
+        <input type="text" style="width:340px; text-align: right;" class="btn btn-default" id="res" value="0">
+        </div>
+        <br><br>
+        <div class="row">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="0">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="1">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="2">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="3">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="4">
+        </div>
+        <br>
+        <div class="row">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="5">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="6">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="7">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="8">
+        <input style="width: 50px;" type="button" class="btn btn-info" onclick="addNum()" value="9">
+        </div>
+        <br>
+        <div class="row">
+        <input style="width: 50px;" type="button" class="btn btn-success" onclick="addOp()" value="*">
+        <input style="width: 50px;" type="button" class="btn btn-success" onclick="addOp()" value="/">
+        <input style="width: 50px;" type="button" class="btn btn-success" onclick="addOp()" value="+">
+        <input style="width: 50px;" type="button" class="btn btn-success" onclick="addOp()" value="-">
+        <input style="width: 50px;" type="button" class="btn btn-success" onclick="clean()" value="C">
+        &nbsp;&nbsp;&nbsp;
+        <input style="width: 50px;" type="button" class="btn btn-success" onclick="resultado()" value="=">
+        </div>
+    </div>
+
+    <script>
+
+        var num = '';
+        var num_esq = '';
+        var op = '';
+        var res = document.getElementById("res");
+
+        function addNum()
+        {
+            if (res.value == 0) {
+                num += event.target.value;
+                res.value = num;
+            }
+            else {
+                num += event.target.value;
+                res.value += num;
+            }
+        }
+
+        function addOp()
+        {
+            op = event.target.value;
+            console.log(op)
+            num_esq = num;
+            num = '';
+            res.value += event.target.value;
+        }
+
+        function resultado()
+        {
+            var num_dir = num;
+            switch (op)
+                {
+                    case '*':
+                        res.value = parseFloat(num_esq) * parseFloat(num_dir);
+                        num = res.value;
+                        op = '';
+                        break;
+                    case '/':
+                        if (num_dir == 0){res.value = "ERRO!"; break;}
+                        else{
+                        res.value = (parseFloat(num_esq) / parseFloat(num_dir)).toFixed(4);
+                        num = res.value;
+                        op = '';
+                        break;}
+                    case '+':
+                        res.value = parseFloat(num_esq) + parseFloat(num_dir);
+                        num = res.value;
+                        op = '';
+                        break;
+                    case '-':
+                        res.value = parseFloat(num_esq) - parseFloat(num_dir);
+                        num = res.value;
+                        op = '';
+                        break;
+                }
+        }
+
+        function clean()
+        {
+            res.value = '';
+            num = '';
+            op = '';
+        }
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

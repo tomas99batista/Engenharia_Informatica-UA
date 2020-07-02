@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora ITW</title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page-header"></div> <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+        <div class="panel panel-info" style="width:70%;">
+            <div class="panel-heading"><h2 style="line-height: 5px;" id="res">0</h2></div>
+            <div class="panel-body" style="margin:0px; padding:2%;">
+                <div class="row">
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="1" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="2" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="3" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="+" onclick="addOperation()" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="4" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="5" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="6" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="-" onclick="addOperation()" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="7" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="8" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="9" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="*" onclick="addOperation()" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="C" onclick="clearResult()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="0" onclick="addNumber()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="=" onclick="calculate()" /></div>
+                    <div class="col-lg-3"><input style="height:50px; text-align:center;" class="form-control btn-lg tecla" value="/" onclick="addOperation()" /></div>
+                </div>
+            </div>
+            <div class="panel-footer"><small>&copy; ITW 2016 - Calculadora</small></div>
+        </div>
+    </div>
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="calculadora.js"></script>
+</body>
+</html>

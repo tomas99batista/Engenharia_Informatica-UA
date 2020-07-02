@@ -1,0 +1,40 @@
+#azul
+{
+    position: absolute;
+    top: 68px;
+    left: 412px;
+    
+    background-color: blue;
+    width: 100px;
+    height: 50px;
+}
+#vermelho
+{
+    position: absolute;
+    top: 90px;
+    right: 500px;
+    
+    background-color: red;
+    width: 100px;
+    height: 50px;
+}
+#verde
+{
+    position: absolute;
+    top: 170px;
+    right: 80px;
+    
+    background-color: green;
+    width: 100px;
+    height: 50px;
+}
+#amarelo
+{
+    position: absolute;
+    top: 140px;
+    right: 400px;
+    
+    background-color: yellow;
+    width: 100px;
+    height: 50px;
+}

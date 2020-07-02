@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ITW - teste prático 1 2017/18</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="myCSS.css" />
+    <style type="text/css">
+        .no_error {display: none; }
+
+        .error {display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="bannerTop">
+        <div class="jumbotron" style="background-image: url(banner.jpg); min-height: 270px; background-repeat: no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="container">
+        <div class="page-header">
+            <h2>Boletim de inscrição</h2>
+        </div>
+        <form action="http://192.168.160.36/FormEcho.aspx" method="post">
+
+
+            <div class="row col-lg-12">
+                <label for="userNumber" class="text-right control-label col-lg-2 col-md-2 col-sm-2">User Number</label>
+                <div class="col-lg-10">
+                    <input type="text" name="userNumber" id="userNumber" class="col-lg-9 col-sm-9 col-md-9 form-control" />
+                    <div class="no_error form-control-static text-danger bg-danger" id="userNumber_Error">
+                        <i class="fa fa-exclamation-triangle"></i> Error: userNumber > 10.000  </div>
+                </div>
+            </div>
+
+            <div class="row col-lg-12">
+                <label for="userName" class="text-right control-label col-lg-2 col-md-2 col-sm-2">User Name</label>
+                <div class="col-lg-10">
+                    <input type="text" name="userName" id="userName" class="col-lg-9 col-sm-9 col-md-9 form-control" placeholder="José Maria Pincel" />
+                    <div class="no_error form-control-static text-danger bg-danger" id="userName_Error">
+                        <i class="fa fa-exclamation-triangle"></i> Error: userName MinimumSize = 15
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 text-center"><hr /></div>
+
+            <div class="row col-lg-12">
+                <label class="text-right control-label col-lg-2 col-md-2 col-sm-2"> Type of registration</label>
+                <div class="col-lg-10">
+                    <label for="partial" class="control-label col-lg-2 col-md-2 col-sm-2 "><input type="radio" id="partial" name="typeOfRegistration" value="partial" /> Partial</label>
+                    <label for="full" class="control-label"><input type="radio" id="full" name="typeOfRegistration" value="full" /> Full</label>
+                    <div class="no_error form-control-static text-danger bg-danger" form id="typeOfRegistration_Error">
+                        <i class="fa fa-exclamation-triangle"></i> Error: Select a Type of registration
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-12 text-center"><hr /></div>
+
+            <div class="row col-lg-12">
+                <label class="text-right control-label col-lg-2 col-md-2 col-sm-2"> Disciplinas</label> 
+                <div class="col-lg-10 col-sm-10 col-md-10">
+                    <div class="col-lg-5 col-sm-5 col-md-5">
+                        <fieldset>
+                            <legend>1º Semestre - Curriculares</legend>
+                            <label for="cur1_1" class="control-label"><input type="checkbox" id="cur1_1" name="cur1_1" /> Álgebra Linear e Geometria Analítica</label><br />
+                            <label for="cur1_2" class="control-label"><input type="checkbox" id="cur1_2" name="cur1_2" /> Elementos de Física</label><br />
+                            <label for="cur1_3" class="control-label"><input type="checkbox" id="cur1_3" name="cur1_3" /> Cálculo I</label><br />
+                            <label for="cur1_4" class="control-label"><input type="checkbox" id="cur1_4" name="cur1_4" /> Introdução às Tecnologias Web</label><br />
+                            <label for="cur1_5" class="control-label"><input type="checkbox" id="cur1_5" name="cur1_5" /> Fundamentos de Programação</label><br />
+                        </fieldset>
+                    </div>
+                    <div class="col-md-5">
+                        <fieldset>
+                            <legend>2º Semestre - Curriculares</legend>
+                            <label for="cur2_1" class="control-label"><input type="checkbox" id="cur2_1" name="cur2_1" /> Modelação e Análise de Sistemas</label><br />
+                            <label for="cur2_2" class="control-label"><input type="checkbox" id="cur2_2" name="cur2_2" /> Cálculo II</label><br />
+                            <label for="cur2_3" class="control-label"><input type="checkbox" id="cur2_3" name="cur2_3" /> Matemática Discreta</label><br />
+                            <label for="cur2_4" class="control-label"><input type="checkbox" id="cur2_4" name="cur2_4" /> Introdução à Arquitetura de Computadores</label><br />
+                            <label for="cur2_5" class="control-label"><input type="checkbox" id="cur2_5" name="cur2_5" /> Programação Orientada a Objetos</label><br />
+                        </fieldset>
+                    </div>
+                    <div class="no_error form-control-static text-danger bg-danger" id="courses_Error">
+                        <i class="fa fa-exclamation-triangle"></i> Error: Wrong number<br />* Partial: 3-5<br />* Full:6-10
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 text-center"><hr /></div>
+
+            <div class="text-center">
+                <div class="btn-group">
+                    <input type="submit" value="Enviar" class="btn btn-primary" onclick="return validateForm()" />
+                    <input type="reset" value="Limpar" class="btn btn-default" onclick="clearErrorMessages()" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="myCode.js"></script>
+</body>
+</html>

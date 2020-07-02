@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Aula 2 , exercicio 4</title>
+</head>
+<body>
+    <form name="PersonData" action="http://192.168.36/FormEcho.aspx" method="post"/>
+
+        <fieldset>
+            <legend>Informação Pessoal</legend>
+                <input type="hidden" name="FormName" value="UserForm" />
+                <input type="text" name="FirstName" placeholder="Digite o seu nome" /> <br />
+                <input type="text" name="LastName" placeholder="Digite o seu apelido" /><br />
+                <input type="text" name="Password" placeholder="Digite a sua palavra passe" />
+        </fieldset>
+        <fieldset>
+            <legend>Comentários</legend>
+                <textarea name="Comments" rows="4" cols="80" placeholder="Insira os seus comentários"></textarea>
+        </fieldset>
+        <input name="Button" type="submit" />
+    <form/>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿.header {
+width: 960px;
+padding-top: 10px;
+height: 90px;
+background-color: #5F9EA0;
+font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+margin-top: 10px;
+font-size: 60pt;
+}
+
+.menu {
+height: 10px;
+width: 960px;
+font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+}
+
+.conteudo {
+font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+width: 960px;
+height: 900px;
+background-color: aqua;
+}
+
+.left {
+float: left;
+width: 90%;
+font-size: 17pt;
+padding-top: 50px;
+padding-left: 50px;
+}
+
+.right {
+float: left;
+width: 100%;
+height: 100px;
+}
+
+.footer {
+width: 100%;
+position: absolute;
+left: 0;
+height: 40px;
+background-color: white;
+padding-top: 20px;
+text-align: center;
+font-size: 15pt;
+}
+
+.barra {
+height: 1070px;
+width: 350px;
+background-color: aquamarine;
+float: right;
+position: absolute;
+top: 20px;
+right: 55px;
+font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+font-size: 18pt;
+text-align: center;
+}
+
+.linkmenu {
+width: 33.333333%;
+background-color: #ECECEC;
+float: left;
+text-align: center;
+color: #75777a;
+}
+
+.linkmenu:hover {
+background-color: #75777a;
+color: #ECECEC;
+text-align: center
+}
+
+body {
+background-image: url('back.png');
+background-size: cover;
+background-repeat: no-repeat;
+font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+}
+
+
+td, th {
+border: 1px solid #dddddd;
+padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+
+table {
+border: 1px solid black;
+width: 900px;
+text-align: center;
+}
+
+.borda {
+width: 900px;
+background-color: white;
+float: left;
+left: 30px;
+top: 30px;
+position: relative
+}
+
+.textopessoas {
+width: 400px;
+background-color: white;
+float: left;
+top: 50px;
+left: 40px;
+position: relative;
+}
+
+.fotos {
+max-width: 70px;
+max-height: 70px;
+}
+
+.videos {
+position: relative;
+left: 200px;
+font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+font-size: 14pt;
+}

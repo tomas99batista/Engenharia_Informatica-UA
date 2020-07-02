@@ -1,0 +1,73 @@
+﻿<!DOC   TYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Exercício 2.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="Boletim"><b>Boletim de Inscrição</b></div>
+    <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+        <dl>
+            <dt style="border-top: 1px dotted gray;"><b>Name</b></dt>
+            <dd style="border-top: 1px dotted gray;">
+                <input type="text" name="name" />
+            </dd>
+            <dt><b>Login</b></dt>
+            <dd>
+                <input type="text" name="name" />
+            </dd>
+            <dt><b>Password</b></dt>
+            <dd>
+                <input type="password" name="name" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt class="Discilpinas" style="border: none;"><b>Disciplinas</b></dt>
+            <dd style=" border-right: 1px dotted gray; border-bottom: none; height: 205px; width:43%; float:left;">
+                    <fieldset class="semestre1" style="border-right: 1px dotted gray; float:left;">
+                        <legend>1º Semestre - Curriculares</legend>
+                        <input type="checkbox" name="disciplinas" value="ALGA">Álgebra Linear e Geometria Analítica<br />
+                        <input type="checkbox" name="disciplinas" value="EL">Elementos de Física<br />
+                        <input type="checkbox" name="disciplinas" value="Cálculo I">Cálculo I<br />
+                        <input type="checkbox" name="disciplinas" value="ITW">Introdução às Tecnologias Web<br />
+                        <input type="checkbox" name="disciplinas" value="FP">Fundamentos de Programação<br />
+                    </fieldset>
+                <fieldset class="semestre2">
+                    <legend>1º Semestre - Opcionais</legend>
+                    <input type="radio" name="disciplinas" value="Música">Música
+                    <input type="radio" name="disciplinas" value="Teatro">Teatro
+                    <input type="radio" name="disciplinas" value="Cinema">Cinema
+                    <input type="radio" name="disciplinas" value="Fotografia">Fotografia
+                </fieldset>          
+            </dd>
+            <dd style="border-right: 1px dotted gray; height: 102px; width:43%; float:left;  height: 205px;">
+                <fieldset class="semestre1">
+                        <legend>2º Semestre - Curriculares</legend>
+                        <input type="checkbox" name="disciplinas" value="MAS">Modelação e Análise de Sistemas<br />
+                        <input type="checkbox" name="disciplinas" value="Cálculo II">Cálculo II<br />
+                        <input type="checkbox" name="disciplinas" value="MD">Matemática Discreta<br />
+                        <input type="checkbox" name="disciplinas" value="IAC">Introdução à Arquitetura de Computadores<br />
+                        <input type="checkbox" name="disciplinas" value="POO">Programação Orientada a Objetos<br />
+                    </fieldset>
+                
+                <fieldset class="semestre2">
+                    <legend>2º Semestre - Opcionais</legend>
+                    <input type="radio" name="disciplinas" value="Música">Música
+                    <input type="radio" name="disciplinas" value="Teatro">Teatro
+                    <input type="radio" name="disciplinas" value="Cinema">Cinema
+                    <input type="radio" name="disciplinas" value="Fotografia">Fotografia
+                </fieldset>
+            </dd>
+        </dl>
+
+        <div style="text-align: center; clear: both; border-bottom: 1px dotted gray; border-right: 1px dotted gray; border-left: 1px dotted gray; background-color: #f2f2f2; margin:0px;">
+            <input name="submit_button" type="submit" value="Enviar"/>
+        </div>
+    </form>
+
+
+
+</body>
+</html>

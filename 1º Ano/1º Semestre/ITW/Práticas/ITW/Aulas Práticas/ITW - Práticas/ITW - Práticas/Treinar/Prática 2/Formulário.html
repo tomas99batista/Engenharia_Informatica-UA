@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>O Meu Formulário</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="bannerTop">
+        <div class="jumbotron" style="background-image: url('banner.jpg'); min-height:280px; background-repeat:no-repeat;background-size:cover"></div>
+    </div>
+    <div class="container">
+        <h1><i class="fa fa-info" aria-hidden="true"></i> Cálculo da média do 1º Ano da LEI</h1>
+        <hr />
+        <form name="PersonalData" action="http://192.168.160.36/FormEcho.aspx" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-lg-1" for="FirstName">Nome:</label>
+                <div class="col-lg-11">
+                    <input class="form-control" type="text" name="FirstName" id="FirstName" />
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

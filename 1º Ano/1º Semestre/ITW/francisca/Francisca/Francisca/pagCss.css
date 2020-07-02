@@ -1,0 +1,31 @@
+﻿.p1 {
+    background-color: #00ff00;
+    color: #ff0000;
+    text-align: center;
+    font-weight: bold;
+    font-family: times;
+    font-size: 18pt;
+    width: 760px;
+    padding: 15px;
+}
+
+.p2 {
+    color: #0000ff;
+    text-align: left;
+    font-style: italic;
+    font-size: 12pt;
+    width: 760px;
+    padding: 10px;
+    font-family: courier;
+    text-indent: 1cm;
+}
+
+.p3 {
+    background-color: rgb(250,0,255);
+    color: #000000;
+    text-align: right;
+    font-size: 24pt;
+    width: 760px;
+    padding: 1px;
+    font-family: sans-serif;
+}

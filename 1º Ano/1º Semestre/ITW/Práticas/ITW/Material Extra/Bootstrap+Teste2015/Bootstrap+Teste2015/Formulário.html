@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootswatch/flatly/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootswatch/flatly/bootstrap.css" rel="stylesheet" />
+
+
+    <style>
+       table, td, th, tr{
+           border-color:darkgrey;
+           border-width:2px;
+           border-style:solid;
+           border-collapse:collapse;
+       }
+
+    </style>
+</head>
+
+<body>
+    <!--Scripts inciais para o bootstrap-->
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!--Barra de Navegação-->
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">RD Technology</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="Inicio.html" style="color:white ; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"><i class="fa fa-home"></i> Quem somos nós ?</a></li>
+                <li><a href="Produtos.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"><i class="fa fa-gift"></i>  Produtos</a></li>
+                <li><a href="Contactos.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"> <i class="fa fa-phone-square"></i>  Contactos</a></li>
+                <li><a href="Calculadora.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"> <i class="fa fa-calculator"></i>  Calculadora de médias</a></li>
+                <li class="active"><a href="Formulário.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"><i class="fa fa-check-square"></i> Formulário</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <!--Jumbotron-->
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-image:url(http://www.auctionpad.co.uk/wp-content/uploads/2015/04/tech-banner2-2732x800.jpg); background-repeat:no-repeat;
+    background-size:cover; height:200px">
+        </div>
+    </div>
+        <!--Formulário-->
+    <form name="Formulário" action="http://192.168.160.36/FormEcho.aspx" method="post">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" style="margin-top:5px; margin-bottom:10px; background-color:#363636;color:white; font-size:28px; font-weight:bold; line-height:36px; text-align:center;border-radius:7px">
+            Dados Pessoais
+        </div>
+        <!--Tabela1-->
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+            <table class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" style="margin-top:20px; margin-bottom:20px">
+                <tr>
+                    <td class="col-lg-3 col-sm-3 col-md-3" style="line-height:40px;border-right:solid; border-color:darkgrey; border-width:2px; text-align:center; font-size:20px; font-weight:bold; background-color:yellow">Nome</td>
+                    <td class="col-lg-9 col-xs-9"><input type="text" name="nome" value="" placeholder="Escreva aqui o seu nome" style="line-height:30px; border-radius:10px; width:100%" /></td>
+                </tr>
+                <tr>
+                    <td class="col-lg-3 col-sm-3 col-md-3" style="line-height:40px;border-right:solid; border-color:darkgrey; border-width:2px; text-align:center; font-size:20px; font-weight:bold; background-color:yellow">Email</td>
+                    <td class="col-lg-9 col-xs-9"><input type="email" name="email" value="" placeholder="Escreva aqui o seu email" style="line-height:30px; border-radius:10px; width:100%" /></td>
+                </tr>
+                <tr>
+                    <td class="col-lg-3 col-sm-3 col-md-3" style="line-height:40px;border-right:solid; border-color:darkgrey; border-width:2px; text-align:center; font-size:20px; font-weight:bold; background-color:yellow">Password</td>
+                    <td class="col-lg-9 col-xs-9"><input type="password" name="password" value="" placeholder="Escreva aqui a sua password" style="line-height:30px; border-radius:10px; width:100%" /></td>
+                </tr>
+            </table>
+        </div>
+        <!--Fim da Tabela1-->
+        <!--CAbeçalho-->
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" style="margin-bottom:20px; background-color:#363636;color:white; font-size:28px; font-weight:bold; line-height:36px; text-align:center;border-radius:7px">
+            Dados Escolares
+        </div>
+        <!--Fim do cabeçalho-->
+        <!--Tabela2-->
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2" style="height:500px">
+
+            <table class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" style="margin-bottom:20px">
+                <tr>
+                    <td class="col-lg-3 col-sm-3 col-md-3" style="line-height:40px;border-right:solid; border-color:darkgrey; border-width:2px; text-align:center; font-size:20px; font-weight:bold; background-color:yellow">1º Semestre</td>
+                    <td class="col-lg-5 col-xs-5" style="border-right:solid; border-color:darkgrey; border-width:2px;"
+                    <h1><center><span style="color:black; font-size:22px; font-weight:bold;">Disciplinas</span></center></h1>
+                    <input type="checkbox" name="d1" value="ef" />Elementos de Física <br />
+                    <input type="checkbox" name="d1" value="c1" />Cálculo I<br />
+                    <input type="checkbox" name="d1" value="alga" />Álgebra Linear e Geometria Analítica<br />
+                    <input type="checkbox" name="d1" value="fp" />Fundamentos de Programação<br />
+                    <input type="checkbox" name="d1" value="itw" />Introdução Às Tecnologias Web<br /><br />
+                    </td>
+                    <td class="col-lg-4 col-xs-4"
+                    <h1><center><span style="color:black; font-size:20px; font-weight:bold">Extra-Curriculares</span></center></h1>
+                    <input type="radio" name="e1" value="musica" />Música <br />
+                    <input type="radio" name="e1" value="foto" />Fotografia<br />
+                    <input type="radio" name="e1" value="cinema" />Cinema<br />
+                    <input type="radio" name="e1" value="dança" />Dança<br />
+                    <input type="radio" name="e1" value="pintura" />Pintura<br />
+                </tr>
+                <tr>
+                    <td class="col-lg-3 col-sm-3 col-md-3" style="line-height:40px;border-right:solid; border-color:darkgrey; border-width:2px; text-align:center; font-size:20px; font-weight:bold; background-color:yellow">2º Semestre</td>
+                    <td class="col-lg-5 col-xs-5" style="border-right:solid; border-color:darkgrey; border-width:2px;"
+                    <h1><center><span style="color:black; font-size:20px; font-weight:bold">Disciplinas</span></center></h1>
+                    <input type="checkbox" name="d2" value="mas" />Modelação e Análise de Sistemas <br />
+                    <input type="checkbox" name="d2" value="c2" />Cálculo II<br />
+                    <input type="checkbox" name="d2" value="md" />Matemática Discreta<br />
+                    <input type="checkbox" name="d2" value="iac" />Introdução à Arquitectura de Computadores<br />
+                    <input type="checkbox" name="d2" value="poo" />Programação Orientada a Objetos<br /><br />
+                    </td>
+                    <td class="col-lg-4 col-xs-4"
+                    <h1><center><span style="color:black; font-size:20px; font-weight:bold">Extra-Curriculares</span></center></h1>
+                    <input type="radio" name="e2" value="musica" />Música <br />
+                    <input type="radio" name="e2" value="foto" />Fotografia<br />
+                    <input type="radio" name="e2" value="cinema" />Cinema<br />
+                    <input type="radio" name="e2" value="dança" />Dança<br />
+                    <input type="radio" name="e2" value="pintura" />Pintura<br />
+                    </td>
+                </tr>
+            </table>
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" style="margin-bottom:20px; background-color:#006400;color:white; font-size:28px; font-weight:bold; line-height:55px; text-align:center;border-radius:7px">
+                <button type="submit" name="Btnsumbmit" style="font-size:24px;line-height:30px; background-color:black; color:white; border-radius:15px" />Submeter
+                <button type="reset" name="Btnreset" style="font-size:24px;line-height:30px; background-color:black; color:white; border-radius:15px" />Reset
+            </div>
+        </div>
+        </form>
+
+
+
+
+</body>
+
+</html>

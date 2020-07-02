@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <link href="mycss.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">*bolinha*</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="Countries.html">Countries</a></li>
+                <li><a href="Leagues.html">Leagues</a></li>
+                <li><a href="Teams.html">Teams</a></li>
+                <li class="active"><a href="Players.html">Players</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="page-header">
+            <h2 data-bind="text:className"></h2>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search player" id="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button" id="google">Go!</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ko foreach: players -->
+                        <tr>
+                            <td><div><img style="height: 30px; margin-right:2%;" data-bind="attr:{ src: 'https://cdn.sofifa.org/18/players/'+player_fifa_api_id+'.png'}" /><i class="fa fa-map-marker"></i><a data-bind="html:player_name, attr:{ href: 'PlayerDetails.html#players/'+id, title: player_name}"></a></div>
+                            <td><div data-bind="text:birthday.split('T')[0]," /></td>
+                            <td><div data-bind="text:height" /></td>
+                            <td><div data-bind="text:weight" /></td>
+                        </tr>
+                        <!-- /ko -->
+                    </tbody>
+                </table>
+                <!-- ko if:error -->
+                <div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+                <!-- /ko -->
+                <div class="bs-callout bs-callout-info" data-bind="html:description"></div>
+
+            </div>
+
+        </div>
+
+                </div>
+
+                <ul class="pagination">
+                    <li data-bind="css: {'page-item disabled default-cursor': !hasPrevious(), 'page-item select-cursor': hasPrevious()}">
+                        <a class="page-link" href="#" data-bind="click:goToPrevious(), css: {'default-cursor': !hasPrevious(), 'select-cursor': hasPrevious()}">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" data-bind="html:page" style="cursor: default;"></a>
+                    </li>
+                    <li data-bind="css: {'page-item disabled default-cursor': !hasNext(), 'page-item select-cursor': hasNext()}">
+                        <a class="page-link" href="#" data-bind="click:goToNext(), css: {'default-cursor': !hasNext(), 'select-cursor': hasNext()}" style="cursor: default;">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <script>
+                var vm = function () {
+                    console.log('ViewModel initiated...')
+                    //---Variáveis locais
+                    var self = this;
+                    var baseUri = 'http://192.168.160.28/football/api/players';
+                    self.pageSize = 20;
+                    self.className = 'Players';
+                    self.description = 'This page aims to demonstrate the use of the football web API for countries and the interconnection with other entities.<br>Called method(s): <ul><li>' + baseUri + '</li></ul>';
+                    self.error = ko.observable();
+                    self.players = ko.observableArray([]);
+                    self.playersCount = 0;
+                    self.pageCount = 1;
+                    self.page = ko.observable();
+                    self.page.subscribe(function (newPage) {
+                        getPlayers();
+                    });
+                    //--- Internal functions
+                    function ajaxHelper(uri, method, data) {
+                        self.error(''); // Clear error message
+                        return $.ajax({
+                            type: method,
+                            url: uri,
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            data: data ? JSON.stringify(data) : null,
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.log("AJAX Call[" + uri + "] Fail...");
+                                self.error(errorThrown);
+                            }
+                        })
+                    }
+                    //--- External functions (accessible outside)
+                    goToPrevious = function () {
+                        if (self.page() !== undefined) self.page(self.page() - 1);
+                    };
+                    goToNext = function () {
+                        if (self.page() !== undefined) self.page(self.page() + 1);
+                    };
+                    hasPrevious = function () {
+                        return self.page() > 1;
+                    };
+                    hasNext = function () {
+                        return self.page() < self.pageCount;
+                    };
+                    getPlayers = function () {
+                        var uri = baseUri + '?page=' + self.page() + '&pageSize=' + self.pageSize;
+                        ajaxHelper(uri, 'GET').done(function (data) {
+                            self.players(data);
+                           
+                        });
+                    };
+                    getPlayersCount = function () {
+                        var uri = baseUri + '/playersCount';
+                        ajaxHelper(uri, 'GET').done(function (data) {
+                            self.playersCount = data;
+                            self.pageCount = Math.ceil(self.playersCount / self.pageSize);
+                            self.page(1);
+                        });
+                    };
+                    //---- initial call
+                    getPlayersCount();
+
+
+                    $(document).ready(function () {
+                        $("#google").click(function () {
+                            var item = $("#search").val()
+                            console.log(item)
+                            baseUri = "http://192.168.160.28/football/api/players/search?srcStr=" + item;
+                            console.log(baseUri)
+                            ajaxHelper(baseUri, 'GET').done(function (data) {
+                                self.players(data);
+                            })
+
+                        })
+                    });
+
+                };
+
+                ko.applyBindings(new vm)
+
+
+
+            </script>
+
+</body>
+</html>

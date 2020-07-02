@@ -1,0 +1,82 @@
+.corpo
+    {
+        
+    }
+
+
+.topo
+    {
+        padding: 0 0 0 2%;
+    }
+
+.menu
+    {
+        width: 78%;
+        padding: 1% 0 1% 2%;
+        background-color: lightgrey;
+        word-spacing: 20px;
+        border-radius: 15px;
+    }
+
+a:hover
+    {
+        color: red;
+    }
+
+a:visited
+    {
+        color: black;
+    }
+
+.conteudos1, .conteudos2
+    {
+        border-style: dotted;
+        padding: 1% 0 1% 2%;
+        float: left;
+        max-width: 35%;
+    }
+
+img
+    {
+        border-style: dotted;
+        clear: both;
+        float: left;
+        border-radius: 10px;
+        margin: 0 0 0 2%;
+        width: 50%;
+        
+    }
+
+.lateral
+    {
+        border-style: dotted;
+        float: right;
+        min-width: 20%;
+        margin: 0 0 0 6%;
+        padding: 3% 0 10% 2%;
+        min-height: 400px;
+        background-color: lightgrey;
+        border-radius: 15px;
+        
+        
+        
+    }
+.lateral_box
+    {
+        text-align: left;
+        padding: 10% 8% 10% 8%;
+        width: 80%;
+        background-color: gray;
+        border-radius: 15px;
+    }
+
+.footer
+    {
+        clear: both;
+        padding: 0.5% 0 0.5% 0;
+        border-radius: 5px;
+        background-color: darkslategrey;
+        text-align: center;
+        color: white;
+        width: 100%;
+    }

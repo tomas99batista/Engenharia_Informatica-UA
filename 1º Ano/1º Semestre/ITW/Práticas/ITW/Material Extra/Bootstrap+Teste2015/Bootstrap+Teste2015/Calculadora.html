@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootswatch/flatly/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootswatch/flatly/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--Scripts inciais para o bootstrap-->
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!--Barra de Navegação-->
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">RD Technology</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="Inicio.html" style="color:white ; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"><i class="fa fa-home"></i> Quem somos nós ?</a></li>
+                <li><a href="Produtos.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"><i class="fa fa-gift"></i>  Produtos</a></li>
+                <li><a href="Contactos.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"> <i class="fa fa-phone-square"></i>  Contactos</a></li>
+                <li class="active"><a href="Calculadora.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"> <i class="fa fa-calculator"></i>  Calculadora de médias</a></li>
+                <li><a href="Formulário.html" style="color:white; font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif"><i class="fa fa-check-square"></i> Formulário</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <!--Jumbotron-->
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-image:url(http://www.auctionpad.co.uk/wp-content/uploads/2015/04/tech-banner2-2732x800.jpg); background-repeat:no-repeat;
+    background-size:cover; height:200px">
+        </div>
+        <!--Calculadora-->
+ 
+ <!--<form name="Média" action="http://192.168.160.36/FormEcho.aspx" method="post"> -->
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" style="margin-top:5px; background-color:#363636;color:white; font-size:34px; font-weight:bold; line-height:36px; text-align:center;border-radius:7px">
+            Média Pessoal
+        </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin-bottom:25px;margin-top:25px; background-color:aquamarine; font-size:24px; font-weight:bold; line-height:26px; text-align:center;border-radius:5px">
+                Informações Pessoais
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                    <br />
+                    <label for="nome" style="font-size:20px">Nome:   </label>
+                    <input type="text" name="nome" value="" id="nome" style="line-height:22px; margin-left:5px ; border-radius:4px; width:90%"/> <br />       
+           </div>
+            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1">
+                <br />
+                <label for="nr" style="font-size:20px">Nº Mec:   </label>
+                <input type="text" name="nome" value="" id="nr" style="line-height:22px; margin-left:5px ; border-radius:4px; width:70%" /> <br />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-5" style="margin-bottom:25px">
+                <br />
+                <label for="nr" style="font-size:20px">Data de Nascimento:   </label>
+                <input type="text" name="nome" value="" id="data" placeholder="dd/mm/aaaa" style="line-height:22px; margin-left:5px ; border-radius:4px; width:48%" /> <br />
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin-top:25px;margin-bottom:10px; background-color:aquamarine; font-size:24px; font-weight:bold; line-height:26px; text-align:center;border-radius:5px">
+             Disciplinas </div>
+            
+            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1" style="margin-bottom:25px; margin-right:2px; background-color:cornflowerblue; font-size:24px; font-weight:bold; line-height:26px; text-align:center;border-radius:5px">
+                1º Semestre
+            </div>
+            <div class="col-lg-4 col-md-4  col-sm-5 " style="margin-bottom:25px; background-color:cornflowerblue; font-size:24px; font-weight:bold; line-height:26px; text-align:center;border-radius:5px">
+                2º Semestre
+            </div>
+
+            <!--Disciplinas-->
+            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1">
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Fundamentos de Programação</span>
+                <span style="position:relative; float:right"><input type="text" name="fp" value="" id="fp" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Introdução às Tecnologias WEB</span>
+                <span style="position:relative; float:right"><input type="text" name="itw" id="itw" value="" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Elementos de Física</span>
+                <span style="position:relative; float:right"><input type="text" name="ef" id="ef" value=""  id="fp" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Álgebra Linear e Geometria Descritiva</span>
+                <span style="position:relative; float:right"><input type="text" name="alga" id="alga" value="" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Cálculo I</span>
+                <span style="position:relative; float:right"><input type="text" name="c1" id="c1" value="" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <br />
+               <span style="text-align:left;text-align:left;font-size:22px;font-weight:bold; color:#191970">Média do 1º Semestre</span>
+               <span style="position:relative; float:right"><input type="text" name="media1" id="media1" readonly="readonly" value="" style="background-color:#C0C0C0; line-height:22px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+
+            </div>
+
+            <div class="col-lg-4 col-md-4col-sm-5">
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Modelação e Análise de Sistemas</span>
+                <span style="position:relative; float:right"><input type="text" name="mas" id="mas"value=""  style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Cálculo II</span>
+                <span style="position:relative; float:right"><input type="text" name="c2" id="c2" value="" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Matemática Discreta</span>
+                <span style="position:relative; float:right"><input type="text" name="md" id="md" value="" id="fp" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Introdução à arquitectura de Computadores</span>
+                <span style="position:relative; float:right"><input type="text" name="iac" id="iac" value="" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <span style="text-align:left;font-size:18px;font-weight:bold">Programação Orientada a Objetos</span>
+                <span style="position:relative; float:right"><input type="text" name="poo" id="poo" value="" style="line-height:18px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+                <br />
+                <br />
+                <span style="text-align:left;text-align:left;font-size:22px;font-weight:bold; color:#191970">Média do 2º Semestre</span>
+                <span style="position:relative; float:right"><input type="text" name="media2" id="media2" readonly="readonly" value="" style="background-color:#C0C0C0; line-height:22px; margin-left:5px ; border-radius:4px; width:35px;" /></span> <br />
+
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin-top:25px;margin-bottom:10px; background-color:aquamarine; font-size:24px; font-weight:bold; line-height:26px; text-align:center;border-radius:5px">
+                <button onclick="res()">Calcular</button>
+            </div>
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="height:100px"></div>
+
+        <script>
+            function res() {
+                var fp = document.getElementById("fp")
+                var ef = document.getElementById("ef")
+                var itw = document.getElementById("itw")
+                var c1 = document.getElementById("c1")
+                var alga = document.getElementById("alga")
+                var media1 = document.getElementById("media1")
+                var md = document.getElementById("md")
+                var poo = document.getElementById("poo")
+                var iac = document.getElementById("iac")
+                var c2 = document.getElementById("c2")
+                var mas = document.getElementById("mas")
+                var media2 = document.getElementById("media2")
+                media1.value = (parseFloat(fp.value) + parseFloat(ef.value) + parseFloat(itw.value) + parseFloat(c1.value) + parseFloat(alga.value)) / 5
+                media2.value = (parseFloat(mas.value) + parseFloat(c2.value) + parseFloat(iac.value) + parseFloat(md.value) + parseFloat(poo.value)) / 5
+            }
+        </script>
+<!--</form>-->
+
+</body>
+</html>

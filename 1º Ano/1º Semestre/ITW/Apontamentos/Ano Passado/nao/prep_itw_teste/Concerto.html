@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Starter Template</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="container">
+        <br>
+        <h1 class="text-center">Concerto!!!!!!!!!</h1>
+        <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="control-label">Name: </label>
+                <input type="text" class="form-control" id="name" placeholder="name" name="Name" />
+            </div>
+            <div class="form-group">
+                <label for="morada" class="control-label">Morada: </label>
+                <textarea class="form-control" id="morada" name="Morada"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label">Email: </label>
+                <input type="email" class="form-control" id="email" name="Email"/>
+            </div>
+             <div class="form-group">
+                <label for="" class="control-label">Place:</label>
+                <div class="container">
+                    <div class="checkbox">
+                        <label><input type="checkbox" class="check" value="100" id="local1" name="Option1">Relva - Frente (100€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" class="check" value="80" id="local2" name="Option2">Relva - Trás (80€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" class="check" value="65" id="local3" name="Option3">Bancada Central (65€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" class="check" value="50" id="local4" name="Option4">Bancada Lateral (50€)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="preco" class="control-label">Preço:</label>
+                <input type="text" class="form-control" id="preco" name="Preço" value="0"/>
+            </div>
+            <div>
+                <p id="name_erro" class="hidden">Erro no nome</p>
+                <p id="morada_erro" class="hidden">Erro na morada</p>
+                <p id="email_erro" class="hidden">Erro no email</p>
+                <p id="local_erro" class="hidden">Erro no local</p>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary" id="submit_button">Submit: </button>
+            </div>
+            
+        
+            
+        
+        
+        
+        </form>
+    
+    
+    
+    </div>
+ 
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

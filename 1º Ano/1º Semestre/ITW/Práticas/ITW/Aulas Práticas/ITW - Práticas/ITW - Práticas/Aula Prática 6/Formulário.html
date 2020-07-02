@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Formulário</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function FormValidation() {
+            var retval = true;
+            var PersonalData_FirstName = document.getElementById("PersonalData_FirstName");
+            var PersonalData_FirstName_Error = document.getElementById("PersonalData_FirstName_Error");
+            var PersonalData_LastName = document.getElementById("PersonalData_LastName");
+            var PersonalData_LastName_Error = document.getElementById("PersonalData_LastName_Error");
+            if ((PersonalData_FirstName.value.trim().length < 3) || (PersonalData_LastName.value.trim().length < 3)) {
+                //First Name
+                if (PersonalData_FirstName_Error.classList.contains("no_error"))
+                    PersonalData_FirstName_Error.classList.remove("no_error");
+                if (!PersonalData_FirstName_Error.classList.contains("error"))
+                    PersonalData_FirstName_Error.classList.add("error");
+
+                //Last Name
+                if (PersonalData_LastName_Error.classList.contains("no_error"))
+                    PersonalData_LastName_Error.classList.remove("no_error");
+                if (!PersonalData_LastName_Error.classList.contains("error"))
+                    PersonalData_LastName_Error.classList.add("error");
+                retval = false;
+            }
+
+            else {
+                //First Name
+                if (PersonalData_FirstName_Error.classList.contains("error"))
+                    PersonalData_FirstName_Error.classList.remove("error");
+                if (!PersonalData_FirstName_Error.classList.contains("no_error"))
+                    PersonalData_FirstName_Error.classList.add("no_error");
+
+                //Last Name
+                if (PersonalData_LastName_Error.classList.contains("error"))
+                    PersonalData_LastName_Error.classList.remove("error");
+                if (!PersonalData_LastName_Error.classList.contains("no_error"))
+                    PersonalData_LastName_Error.classList.add("no_error");
+            }
+            //alert(retval);
+            return retval;
+        }
+ 
+            
+
+    </script>
+    <style type="text/css">
+        .no_error {display: none; }
+        .error {display: inline-block; }
+    </style>
+</head>
+<body>
+    <form class="form-horizontal" name="PersonalData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+        <div class="page-header"><h1>Personal Info</h1></div>
+        <input type="hidden" name="FormName" id="PersonalData_FormName" value="UserForm" />
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="PersonalData_FirstName">First Name:</label>
+            <div class="col-lg-8 col-lg-offset-1">
+               <input type="text" name="FirstName" id="PersonalData_FirstName" placeholder="Digite o seu nome" class="form-control" />
+               <div id="PersonalData_FirstName_Error" class="no_error form-control-static text-danger bg-danger">
+                  &nbsp;<i class="fa fa-exclamation-triangle"></i> The First Name should have, at least, 3 chars!&nbsp;
+               </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="PersonalData_LastName">Last Name:</label>
+            <div class="col-lg-8 col-lg-offset-1">
+                <input type="text" name="LastName" id="PersonalData_LastName" placeholder="Digite o seu sobrenome" class="form-control" />
+                <div id="PersonalData_LastName_Error" class="no_error form-control-static text-danger bg-danger">
+                    &nbsp;<i class="fa fa-exclamation-triangle"></i> The Last Name should have, at least,  3 chars!&nbsp;
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="PersonalData_Password">Password:</label>
+            <div class="col-lg-offset-1 col-lg-8"><input type="password" name="Password" id="PersonalData_Password" placeholder="Digite a sua palavra passe" class="form-control" /></div>
+        </div>
+
+        <div class="form-group">
+            <label for="PersonalData_Comments" class="col-lg-2 control-label">Comments:</label>
+            <div class="col-lg-8 col-lg-offset-1"><textarea name="Comments" id="PersonalData_Comments" rows="4" cols="80" placeholder="Insira os seus comentários" class="form-control"></textarea></div>
+        </div> 
+        <div class="col-lg-12 text-center"><hr /></div>
+        <div class="col-lg-12 text-center">
+            <input name="Button" type="reset" class="btn btn-default" value="Clear data" />
+            <input name="Button" type="submit" class="btn btn-primary" value="Submit data" onclick="return FormValidation()" />
+        </div>
+    </form>
+
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+</body>
+</html>

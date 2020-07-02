@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Football: Countries</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/style.css" rel="stylesheet" />
+    <link href="CSS/Footer-white.css" rel="stylesheet" />
+    <link href="CSS/simple-sidebar.css" rel="stylesheet" />
+    <link href="CSS/portfolio.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li role="presentation"><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true" style="margin-right:7%;"></i>Home</a></li>
+                <li role="presentation"><a href="Countries.html"><i class="fa fa-globe" aria-hidden="true" style="margin-right:8%;"></i>Countries</a></li>
+                <li role="presentation"><a href="leagues.html"><i class="fa fa-trophy" aria-hidden="true" style="margin-right:8%;"></i>Leagues</a></li>
+                <li role="presentation"><a href="teams.html"><i class="fa fa-users" aria-hidden="true" style="margin-right:5%;"></i>Teams</a></li>
+                <li role="presentation"><a href="players.html"><i class="fa fa-user" aria-hidden="true" style="margin-right:10%;"></i>Players</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div style="width:100%;" id="content">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" style="border-radius: 30px;" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <div style="padding-top:3%;" class="navbar-brand">
+                            <a href="index.html"><h1><span><i class="fa fa-futbol-o" aria-hidden="true"></i></span> Football</h1></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                <div style="margin-top:0%;" class="page-header">
+                    <h2 style="margin-top:0;" data-bind="text:className"></h2>
+                    <p data-bind="html:description"></p>
+                </div>
+                <div class="container-fluid">
+                    <!-- ko foreach: countries -->
+                    <div class="col-lg-4 col-md-6 col-xs-12 container" style="margin-top:2%; margin-bottom:2%;">
+                        <img class="image" data-bind="attr:{src: 'Images/Countries/country'+id+'.png'}" />
+                        <div class="middle">
+                            <div class="text"><a data-bind="html:name, attr:{ href: 'leagueDetails.html#'+id, title: name}"></a></div>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>  
+
+                <div class="clearfix"></div>
+                <!-- ko if:error -->
+                <div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+                <!-- /ko -->
+            </div>
+            <!-- Footer -->
+            <footer id="myFooter">
+                <div class="container-fluid" style="padding-top:1.5%;padding-left:0; padding-right:0;">
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Company Information</a></div>
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Contact us</a></div>
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Reviews</a></div>
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Terms of service</a></div>
+                    <div style="padding-top:5%;"><p class="footer-copyright">© 2016 Copyright Text</p></div>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="JS/countries.js"></script>
+    <script src="JS/sideBar.js"></script>
+</body>
+</html>

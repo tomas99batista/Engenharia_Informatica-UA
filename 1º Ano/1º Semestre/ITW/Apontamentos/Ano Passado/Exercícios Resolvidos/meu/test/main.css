@@ -1,0 +1,41 @@
+.header{
+min-height: 60px;
+background-color: #00FFCC;
+color: balck;
+border-radius: 5px;
+padding: 3% 0 0 2%;
+}
+
+.up_menu{
+min-height: 15px;
+background-color: #00FFCC;
+color: black;
+border-radius: 5px;
+margin: 3px 0 0 0;
+padding: 2px 0 0 10px;
+}
+
+.content{
+margin: 1% 0% 1% 1%;
+float: left;
+width: 77%;
+min-height: 440px;
+}
+
+.menu_lateral{
+margin: 5px 0% 0% 0%;
+float: left;
+width: 19%;
+min-height: 410px;
+border-radius: 5px;
+padding: 3% 0 0 3%;
+background-color: #00FFAA;
+}
+
+.footer{
+clear: both;
+min-height: 10px;
+padding: 1% 1% 1% 1%;
+border-radius: 5px;
+background-color: #00AAAA;
+}

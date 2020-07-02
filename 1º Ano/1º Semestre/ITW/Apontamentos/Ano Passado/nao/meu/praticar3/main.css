@@ -1,0 +1,119 @@
+.corpo
+    {
+        margin: auto;
+        height: 800px; 
+        font-family: 'Open Sans', sans-serif;
+    }
+
+.up_menu
+    {
+        height: 105px;
+        border-radius: 5px; 
+    }
+.menu
+    {
+        padding: 5% 0 3% 0;
+        width: 60%;
+        float: right;
+    }
+
+.logo
+    {   
+        
+        font-size: 29px;
+        text-align: right;
+        color: dodgerblue;
+        margin: 1.7% 0 0 9%;
+        width: 250px;
+        float: left;
+    }
+
+span
+    {
+        margin: 3% 0 0 0;
+    }
+
+a
+    {
+        text-decoration: none;
+        color: black;
+        padding: 1% 1% 1% 1%;
+        font-size: 20px;
+    }
+a.current
+    {
+            color: white;
+        border-radius: 5px;
+        width: 4%;
+        background-color: dodgerblue;     
+    }
+a:hover
+    {
+        color: white;
+        border-radius: 5px;
+        width: 4%;
+        background-color: dodgerblue;
+    }
+
+.conteudo1
+    {
+        clear: both;
+        font-size: 30px;
+        font-weight: 500;
+        text-align: left;
+        color: indianred;
+        height: 350px;
+        margin: 0 0 0 8%;
+        padding: 2% 0 0 2%;
+    }
+.conteudo2
+    {
+        clear: both; 
+        margin: 0 0 0 8%;     
+    }
+.col1, .col2, .col3
+    {
+        margin: 1% 0.5% 0 0.5%;
+        float: left;
+        width: 30%;
+    }
+
+h2
+    {
+        color: dodgerblue;
+    }
+
+img
+    {
+        float:right;
+        padding: 0 15% 0 0;
+    }
+
+.footer
+    {
+        clear: both;
+        width: 96%;
+        float: left;
+        margin: 5% 0 5% 0;
+        padding: 3% 2% 3% 2%;
+        background-color: indianred;
+        border-radius: 5px;
+    }
+
+.copy
+    {
+        float: right;
+        width: 50%;
+        text-align: right;
+        color: white;
+        font-size: 15px;
+    }
+
+.autor
+    {
+        float: left;
+        width: 50%;
+        text-align: left;
+        color: white;
+        font-size: 15px;
+    }

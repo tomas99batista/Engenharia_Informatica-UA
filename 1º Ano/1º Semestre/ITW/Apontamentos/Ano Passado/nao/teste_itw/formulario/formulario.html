@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="formulario.css" />
+</head>
+<body>
+    <div class="bannerTop"></div>
+    <div class="container">
+        <form action="http://192.168.160.36/FormEcho.aspx" method="post">
+            <h1 class="page-header"><i class="fa fa-info"></i> Cálculo da média do 1º ano da LEI</h1>
+            <div class="row">
+                <div class="col-xs-2 form-control-static text-right"><label for="nome" class="control-label">Nome:</label></div>
+                <div class="col-xs-10 form-control-static text-right"><input type="text" id="nome" name="nome" class="form-control" value="Maria José Pinhão" /></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 form-control-static text-right"><label for="numMec" class="control-label">N.º Mec:</label></div>
+                <div class="col-xs-3 form-control-static text-right"><input type="text" id="numMec" name="numMec" class="form-control" value="80777" /></div>
+                <div class="col-xs-2 form-control-static text-right"><label for="dataNascimento" class="control-label">Data Nasc:</label></div>
+                <div class="col-xs-3 form-control-static text-right"><input type="text" id="dataNascimento" name="dataNascimento" class="form-control" placeholder="Ex: yyyy/mm/dd" value="1986/11/07" /></div>
+            </div>
+            <hr />
+            <div class="panel panel-success" style="background-color: lightgreen;"><h3>Plano Curricular</h3></div>
+            <div class="col-xs-6 text-center" style="background-color: lightblue;"><strong>1º semestre</strong></div>
+            <div class="col-xs-6 text-center" style="background-color: lightblue;"><strong>2º semestre</strong></div>
+            <div class="col-xs-6">
+                <div class="col-xs-8"><div class=""><strong>Unidade Curricular</strong></div></div>
+                <div class="col-xs-2"><div class=""><strong>Créditos</strong></div></div>
+                <div class="col-xs-2"><div class=""><strong>Nota</strong></div></div>
+                <div class="col-xs-8"><div class="">Álgebra Linear e Geometria Analítica</div></div>
+                <div class="col-xs-2"><input type="text" id="ALGA_C"  name="ALGA_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="ALGA_N"  name="ALGA_N" class="form-control" value="12" /></div>
+                <div class="col-xs-8"><div class="">Elementos de Física</div></div>
+                <div class="col-xs-2"><input type="text" id="FIS_C" name="FIS_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="FIS_N" name="FIS_N" class="form-control" value="13" /></div>
+                <div class="col-xs-8"><div class="">Cálculo I</div></div>
+                <div class="col-xs-2"><input type="text" id="CALC1_C" name="CALC1_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="CALC1_N" name="CALC1_N" class="form-control" value="10" /></div>
+                <div class="col-xs-8"><div class="">Introdução às Tecnologias Web</div></div>
+                <div class="col-xs-2"><input type="text" id="ITW_C" name="ITW_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="ITW_N" name="ITW_N" class="form-control" value="20" /></div>
+                <div class="col-xs-8"><div class="">Fundamentos de Programação</div></div>
+                <div class="col-xs-2"><input type="text" id="FP_C" name="FP_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="FP_N" name="FP_N" class="form-control" value="15" /></div>
+                <div class="col-xs-12 text-center"><hr /></div>
+                <div class="col-xs-8 form-control-static text-right"><div class="text-right">1º Semestre (/Créditos | Média)</div></div>
+                <div class="col-xs-2"><input type="text" id="M1S_C" name="M1S_C" class="form-control" readonly="readonly" /></div>
+                <div class="col-xs-2"><input type="text" id="M1S_N" name="M1S_N" class="form-control" readonly="readonly" /></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="col-xs-8"><div class=""><strong>Unidade Curricular</strong></div></div>
+                <div class="col-xs-2"><div class=""><strong>Créditos</strong></div></div>
+                <div class="col-xs-2"><div class=""><strong>Nota</strong></div></div>
+                <div class="col-xs-8"><div class="">Modelação e Análise de Sistemas</div></div>
+                <div class="col-xs-2"><input type="text" id="MAS_C" name="MAS_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="MAS_N" name="MAS_N" class="form-control" value="13" /></div>
+                <div class="col-xs-8"><div class="">Cálculo II</div></div>
+                <div class="col-xs-2"><input type="text" id="CALC2_C" name="CALC2_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="CALC2_N" name="CALC2_N" class="form-control" value="10" /></div>
+                <div class="col-xs-8"><div class="">Matemática Discreta</div></div>
+                <div class="col-xs-2"><input type="text" id="MD_C" name="MD_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="MD_N" name="MD_N" class="form-control" value="10" /></div>
+                <div class="col-xs-8"><div class="">Introdução à Arquitetura de Computadores</div></div>
+                <div class="col-xs-2"><input type="text" id="IAC_C" name="IAC_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="IAC_N" name="IAC_N" class="form-control" value="13" /></div>
+                <div class="col-xs-8"><div class="">Programação Orientada a Objetos</div></div>
+                <div class="col-xs-2"><input type="text" id="POO_C" name="POO_C" class="form-control" value="6" /></div>
+                <div class="col-xs-2"><input type="text" id="POO_N" name="POO_N" class="form-control" value="13" /></div>
+                <div class="col-xs-12 text-center"><hr /></div>
+                <div class="col-xs-8 form-control-static text-right"><div class="">2º Semestre (/Créditos | Média)</div></div>
+                <div class="col-xs-2"><input type="text" id="M2S_C" name="M2S_C" class="form-control" readonly="readonly" /></div>
+                <div class="col-xs-2"><input type="text" id="M2S_N" name="M2S_N" class="form-control" readonly="readonly" /></div>
+            </div>
+            <div class="col-xs-12 text-center"><hr /></div>
+            <div class="col-xs-12 text-center"><input type="submit" onclick="return calcula()" value="Calcular" class="btn btn-primary" /></div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="formulario.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>League Details</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/style.css" rel="stylesheet" />
+    <link href="CSS/simple-sidebar.css" rel="stylesheet" />
+    <link href="CSS/Footer-white.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li role="presentation"><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true" style="margin-right:7%;"></i>Home</a></li>
+                <li role="presentation"><a href="Countries.html"><i class="fa fa-globe" aria-hidden="true" style="margin-right:8%;"></i>Countries</a></li>
+                <li role="presentation"><a href="leagues.html"><i class="fa fa-trophy" aria-hidden="true" style="margin-right:8%;"></i>Leagues</a></li>
+                <li role="presentation"><a href="teams.html"><i class="fa fa-users" aria-hidden="true" style="margin-right:5%;"></i>Teams</a></li>
+                <li role="presentation"><a href="players.html"><i class="fa fa-user" aria-hidden="true" style="margin-right:10%;"></i>Players</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content" style="width:100%;">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" style="border-radius: 30px;" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <div style="padding-top:3%;" class="navbar-brand">
+                            <a href="index.html"><h1><span><i class="fa fa-futbol-o" aria-hidden="true"></i></span> Football</h1></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                <div style="margin-top:0%;" class="page-header">
+                    <h2 style="margin-top:0%;" data-bind="text:className"></h2>
+                    <p data-bind="html:description"></p>
+                </div>
+                <div>
+                    <div style="margin-top:0%;" class="page-header">
+                        <div class="container-fluid" data-bind="foreach: playerInfo">
+                            <div class="col-lg-1 col-lg-offset-1"><img style="height: 120px;text-align:right" data-bind=" attr: {src: 'https://cdn.sofifa.org/18/players/'+player_fifa_api_id+'.png'}" /></div>
+                            <div class="col-lg-10" style="margin-top:2%;">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:right;"><b>Name</b></div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-offset-1 col-xs-9" data-bind="text: player_name"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:right;"><b>Birthday</b></div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-offset-1 col-xs-9" data-bind="text: birthday.split('T')[0]"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:right;"><b>Height</b></div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-offset-1 col-xs-9" data-bind="text: height"></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align:right;"><b>Weight</b></div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-offset-1 col-xs-9" data-bind="text: weight"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="backPlayer" style="margin-top:2%;" class="btn btn-default"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back to List</button>
+                    </div>
+                    <div data-bind="foreach: playerInfo">
+                        <div class="container-fluid">
+                            <div data-bind="visible: player_attributes.length > 0 " class="page-header">
+                                <h2>Player Attributes</h2>
+                            </div>
+                        </div>
+                        <div class="container-fluid" data-bind="foreach: player_attributes">
+                            <label class="col-lg-3" style="float: left; text-align:right;">Overall rating</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width: overall_rating + '%'} , text: overall_rating + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Potential</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width: potential + '%'} , text: potential + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Crossing</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width: crossing + '%'} , text: crossing + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Finishing</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width: finishing + '%'} , text: finishing + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Heading accuracy</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width: heading_accuracy + '%'} , text: heading_accuracy + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Short passing</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:short_passing + '%'} , text: short_passing + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Volleys</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:volleys + '%'} , text: volleys + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Dribbling</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:dribbling + '%'} , text: dribbling + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Curve</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:curve + '%'} , text: curve + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Free kick accuracy</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:free_kick_accuracy + '%'} , text: free_kick_accuracy + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Long passing</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:long_passing + '%'} , text: long_passing + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Ball control</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:ball_control + '%'} , text: ball_control + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Acceleration</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:acceleration + '%'} , text: acceleration + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Sprint speed</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:sprint_speed + '%'} , text: sprint_speed + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Agility</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:agility + '%'} , text: agility + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Reactions</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:reactions + '%'} , text: reactions + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Balance</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:balance + '%'} , text: balance + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Shot power</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:shot_power + '%'} , text: shot_power + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Jumping</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:jumping+ '%'} , text:jumping + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Stamina</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:stamina+ '%'} , text:stamina + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Strength</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:strength+ '%'} , text:strength + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Long shots</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:long_shots+ '%'} , text:long_shots + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Aggression</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:aggression+ '%'} , text:aggression + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Interceptions</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:interceptions+ '%'} , text:interceptions + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Positioning</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:positioning+ '%'} , text:positioning + '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Vision</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:vision+ '%'} , text:vision+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Penalties</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:penalties+ '%'} , text:penalties+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Marking</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:marking+ '%'} , text:marking+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Standing tackle</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:standing_tackle+ '%'} , text:standing_tackle+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Sliding tackle</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:sliding_tackle+ '%'} , text:sliding_tackle+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Goalkeeper diving</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:gk_diving+ '%'} , text:gk_diving+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Goalkeeper handling</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:gk_handling+ '%'} , text:gk_handling+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Goalkeeper kicking</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:gk_kicking+ '%'} , text:gk_kicking+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Goalkeeper positioning</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:gk_positioning+ '%'} , text:gk_positioning+ '%' "></div>
+                                </div>
+                            </div>
+
+                            <label class="col-lg-3" style="float: left; text-align:right;">Goalkeeper reflexes</label>
+                            <div class="col-lg-9">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:gk_reflexes+ '%'} , text:gk_reflexes+ '%' "></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <!-- ko if:error -->
+            <div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+            <!-- /ko -->
+            <!-- Footer -->
+            <footer id="myFooter">
+                <div class="container-fluid" style="padding-top:1.5%;padding-left:0; padding-right:0;">
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Company Information</a></div>
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Contact us</a></div>
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Reviews</a></div>
+                    <div style="text-align:center" class="col-xs-3"><a href="#">Terms of service</a></div>
+                    <div style="padding-top:5%;"><p class="footer-copyright">© 2016 Copyright Text</p></div>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="JS/sideBar.js"></script>
+    <script src="JS/playerDetails.js"></script>
+</body>
+</html>

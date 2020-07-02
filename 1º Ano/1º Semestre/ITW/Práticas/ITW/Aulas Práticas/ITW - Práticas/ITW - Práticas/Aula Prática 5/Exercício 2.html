@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        /* Pontos 1, 2 e 3 do 2º exercício */
+        var s = "a";
+        var x = 3
+        console.log(s + 1);
+        console.log(x + 1);
+        function soma(x,y) {
+            return x + y;
+        }
+        var resultado = soma(3, 4)
+        document.write("Este é o nosso resultado: ", resultado)
+
+        /* Ponto 4 do 2º exercício */
+        var a = "29";
+        var b = 29;
+        if (a == b)
+            alert("Iguais!!");
+        else
+            alert("Diferentes...");
+
+        /* Ponto 5 do 2º exercício */
+        var mine = "this is huge";
+        switch (mine) {
+            case "abc":
+                alert("This is a string that says 'abc'.");
+                break;
+            case 3:
+                alert("Isto é o número inteiro 3.");
+                break;
+            case "this is huge":
+                alert("This is a string that says 'this is huge'.");
+                break;
+            default:
+                alert("Outro...")
+        }
+    </script>
+</head>
+<body>
+    <!--Ponto 6 do 2º exercício-->
+    <br /><br />
+    <input id="opção1" value="2" />
+    <input id="opção2" value="3" />
+    <p>Soma:</p>
+    <input id="res" value="" />
+    <script type="text/javascript" src="MyJavaScript2.js"></script>
+</body>
+</html>

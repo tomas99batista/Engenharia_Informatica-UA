@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<style>
+			
+				div.tudo {width:100000px; height:100000px;}
+			
+				div.boletim {font-family:consolas; font-size: 30px; vertical-align:center; text-align:center; color:yellow; width:900px; height:76px; border: dotted 1px grey; background-color:black;}
+			
+				div.espaço1 {width:906; height:5px;}
+
+				div.caixas {width:906px; height:90px;}
+				
+					div.nlp {font-family:consolas; font-size: 17px; width:145px; height:90px; float:left; background-color:black;}
+						div.name {text-align:center; color:white; width:145px; height:30px; border: dotted 1px grey;}
+						div.login {text-align:center; color:white; width:145px; height:30px; border: dotted 1px grey;}
+						div.password {text-align:center; color:white; width:145px; height:30px; border: dotted 1px grey;}
+				
+					div.nlp2 {width:755px; height:90px; float:left; background-color:#F0F0F0;}
+						div.name2 {width:755px; height:30px; border: dotted 1px grey;}
+						div.login2 {width:755px; height:30px; border: dotted 1px grey;}
+						div.passoword2 {width:755px; height:30px; border: dotted 1px grey;}
+					
+				div.espaço2 {width:906; height:5px;}	
+					
+				div.escolhas {font-family:consolas; width:904px; height:216px;}
+				
+					div.disciplinas {font-size:17px; text-align:center; width:145px; height:214px; float:left; background-color:black; color:white;}
+				
+					div.escolhas1 {font-size: 15px; width:377.5px; height:210px; float:left; background-color:#F0F0F0;}
+						div.curriculares1 {width:377.5px; height:150px; float:left; border:dotted 1px grey; background-color:#F0F0F0;}
+						div.opcional1 {width:377.5px; height:60px; float:left; border:dotted 1px grey; background-color:#F0F0F0;}
+					
+					div.escolhas2 {font-size: 15px; width:377.5px; height:210px; float:left; border:dotted 1px grey; background-color:#F0F0F0;}
+						div.curriculares2 {font-size: 15px; width:377.5px; height:150px; float:left; border:dotted 1px grey; background-color:#F0F0F0;}
+						div.opcional2 {font-size: 15px; width:377.5px; height:60px; float:left; border:dotted 1px grey; background-color:#F0F0F1;}
+					
+				div.enviar {text-align:center; width:900px; height:25px; border:dotted 1px grey; background-color:#F0F0F0;}
+			</style>
+	</head>
+	
+	
+	<body>
+	
+		<form name="InformacaoPessoal" action="http://192.168.160.36/FormEcho.aspx" method="post"><br/>
+			
+			<div class="tudo">
+			
+				<div class="boletim">
+					Boletim de Inscrição
+				</div>
+				
+					<div class="espaço1">
+					</div>
+
+					<div class="caixas">
+		
+					<div class="nlp">
+	
+						<div class="name">
+							<label for="Name"> Name </label>
+						</div>
+		
+						<div class="login">
+							<label for="Login"> Login </label>
+						</div>
+		
+						<div class="password">
+							<label for="Password"> Password </label>
+						</div>
+	
+					</div>
+	
+					<div class="nlp2">
+	
+						<div class="name2">
+							<input size="70px" type="text" id="Name" name="Name"/><br>
+						</div>
+		
+						<div class="login2">
+							<input size="70px" type="text" id="Login" name="Login"/><br>
+						</div>
+		
+						<div class="password2">
+							<input size="23px" type="password" id="Password" name="Password"/><br>
+						</div>
+	
+					</div>
+		
+				</div>
+			
+				<div class="espaço2">
+				</div>
+	
+				<div class="escolhas">
+		
+					<div class="disciplinas">
+						Disciplinas
+					</div>
+		
+					<div class="escolhas1">
+			
+						<div class="curriculares1">
+							<fieldset style="background-color:#C8C8C8;">
+								<legend> 1º Semestre - Curriculares </legend>												
+									<input type="checkbox" name="Curriculares1" value="ALGA">Álgebra Linear e Geometria Analítica<br>
+									<input type="checkbox" name="Curriculares1" value="EF">Elementos de Física<br>
+									<input type="checkbox" name="Curriculares1" value="C1">Cálculo I<br>
+									<input type="checkbox" name="Curriculares1" value="ITW">Introdução às Tecnologias Web<br>
+									<input type="checkbox" name="Curriculares1" value="FP">Fundamentos de Programação
+							</fieldset>
+						</div>
+			
+						<div class="opcional1">
+							<fieldset style="background-color:#C8C8C8;">
+								<legend> 1º Semestre - Opcionais </legend>
+									<input type="radio" name="Opcionais1" value="Música">Música
+									<input type="radio" name="Opcionais1" value="Teatro">Teatro
+									<input type="radio" name="Opcionais1" value="Cinema">Cinema
+									<input type="radio" name="Opcionais1" value="Fotografia">Fotografia
+							</fieldset>
+						</div>
+			
+					</div>
+		
+					<div class="escolhas 2">
+			
+						<div class="curriculares2">
+							<fieldset style="background-color:#C8C8C8;">
+								<legend> 2º Semestre - Curriculares </legend>												
+									<input type="checkbox" name="Curriculares2" value="MAS">Modelação e Análise de Sistemas<br>
+									<input type="checkbox" name="Curriculares2" value="C2">Cálculo II<br>
+									<input type="checkbox" name="Curriculares2" value="MD">Matemática Discreta<br>
+									<input type="checkbox" name="Curriculares2" value="IAC">Introdução à Arquitetura de Computadores<br>
+									<input type="checkbox" name="Curriculares2" value="POO">Programação Orientada a Objetos
+							</fieldset>
+						</div>
+			
+						<div class="opcional2">
+							<fieldset style="background-color:#C8C8C8;">
+								<legend> 2º Semestre - Opcionais </legend>
+									<input type="radio" name="Opcionais2" value="Música">Música
+									<input type="radio" name="Opcionais2" value="Teatro">Teatro
+									<input type="radio" name="Opcionais2" value="Cinema">Cinema
+									<input type="radio" name="Opcionais2" value="Fotografia">Fotografia
+							</fieldset>
+						</div>
+			
+					</div>
+		
+				</div>
+				
+				<div class="enviar">
+					<input type="Submit" name="Enviar" value="Enviar"/>
+				</div>
+				
+			</div>
+		</form>
+	</body>
+</html>

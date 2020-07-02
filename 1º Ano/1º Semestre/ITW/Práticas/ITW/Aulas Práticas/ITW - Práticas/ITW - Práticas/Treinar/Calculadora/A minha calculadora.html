@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <title>A minha calculadora</title>
+</head>
+<body style="font-family: 'Arvo', 'Times New Roman', Times, serif; color: black;">
+    <!--Menu Topo-->
+    <nav style="background-color:#99d6ff;" class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color: black;"><i class="fa fa-calculator" aria-hidden="true"></i> A minha calculadora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--Conteúdo da Página-->
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container text-center" style="width: 50%;">
+        <div class="row">
+            <input type="text" class="form-control text-right" value="0" id="res" readonly/>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="C" class="form-control btn btn-default" onclick="clearResult()" /></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="%" class="form-control btn btn-default" onclick="addOperation()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="^" class="form-control btn btn-default" onclick="addOperation()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="/" class="form-control btn btn-default" onclick="addOperation()"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="7" class="form-control btn btn-default" onclick="addNumber()" /></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="8" class="form-control btn btn-default" onclick="addNumber()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="9" class="form-control btn btn-default" onclick="addNumber()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="*" class="form-control btn btn-default" onclick="addOperation()"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="4" class="form-control btn btn-default" onclick="addNumber()" /></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;"  value="5" class="form-control btn btn-default" onclick="addNumber()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="6" class="form-control btn btn-default" onclick="addNumber()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="-" class="form-control btn btn-default" onclick="addOperation()"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="1" class="form-control btn btn-default" onclick="addNumber()" /></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="2" class="form-control btn btn-default" onclick="addNumber()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="3" class="form-control btn btn-default" onclick="addNumber()"></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="+" class="form-control btn btn-default" onclick="addOperation()"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="0" class="form-control btn btn-default" onclick="addNumber()" /></div>
+            <div class="col-md-3" style="margin:0px; padding:0px;"><input style="text-align: center;" value="." class="form-control btn btn-default""></div>
+            <div class="col-md-6" style="margin:0px; padding:0px;"><input style="text-align: center;" value="=" class="form-control btn btn-default" onclick="calculate()"></div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!--Menu Bottom-->
+    <nav style="background-color:#99d6ff;" class="navbar navbar-fixed-bottom navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color: black; font: 14px;">&copy; Desde 1999 a virar frangos nisto &#128521;</a>
+            </div>
+        </div>
+    </nav>
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="calculadora.js"></script>
+</body>
+</html>

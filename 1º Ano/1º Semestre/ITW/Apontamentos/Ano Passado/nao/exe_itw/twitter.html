@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <!--<link href="Content/bootstrap.min.css" rel="stylesheet" />-->
+
+    </head>
+    <body>
+    	<textarea name="tweet_text" id="tweet_text" onkeydown="textCounter()" onkeyup="textCounter()" onchange="textCounter()"></textarea>
+    	<div id="output">140 characters available</div>
+
+      <script>
+        var output = document.getElementById("output");
+	    var charCount = 140;
+        var textarealimit = 140;
+        //output.innerHTML = "e";
+        function textCounter()
+        {
+            var tweet = document.getElementById("tweet_text");
+        	var count = tweet.value.length;
+            if (count > textarealimit)
+            {
+                tweet.value = tweet.value.substring(0,textarealimit);
+            }
+            
+            else
+            {
+                if (charCount - count < 20)
+                {
+                    output.style.color = "red";
+                }
+                else
+                {
+                    output.style.color = "black";
+                }
+                output.innerHTML = (charCount - count) + " characters available";
+            }
+	}
+      </script>
+        <!--<script src="Scripts/jquery-3.1.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>-->
+    </body>
+</html>

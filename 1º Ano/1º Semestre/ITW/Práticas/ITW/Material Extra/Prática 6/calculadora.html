@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculadora ITW</title>
+		<meta charset="utf-8" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+		<link 
+			rel="stylesheet" 
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+			integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+			crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/70b41422cb.css">
+		<link rel="stylesheet" href="calculadora.css">
+	</head>
+	<body>
+		<div class="page-header"></div>
+		<div id="lol" class="col-lg-6 col-lg-offset-3 col-xs-12">
+			<div class="panel panel-info">
+			<div class="panel-heading">
+				<h2 id="res">0</h2>
+			</div>
+			<div class="panel-b	ody">
+				<div class="row">
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="1" onclick="addNumber(event)"> 1 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="2" onclick="addNumber(event)"> 2 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="3" onclick="addNumber(event)" > 3 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="+" onclick="addOperation(event)" > + </button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="4" onclick="addOperation(event)" > 4 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="5" onclick="addNumber(event)" > 5 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="6" onclick="addNumber(event)" > 6 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="-" onclick="addOperation(event)" > - </button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="7" onclick="addNumber(event)" > 7 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="8" onclick="addNumber(event)" > 8 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="9" onclick="addNumber(event)" > 9 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="*" onclick="addOperation(event)" > x </button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="C" onclick="apagar()" > C </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="0" onclick="addNumber(event)" > 0 </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="0" onclick="calculadora()" > = </button>
+					</div>
+					<div class="col-lg-3">
+						<button class="form-control btn-lg tecla" value="/" onclick="addOperation(event)" > / </button>
+					</div>
+				</div>
+			</div>
+				<div id="puta" class="panel-footer">
+				<small>&copy; Sessão de Estudo ITW - Calculadora</small>
+				</div>
+			</div>
+		<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous">	  
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+				integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
+				crossorigin="anonymous">
+		</script>
+		<script 
+			  type="text/javascript"
+			  src="calculadora.js">
+		</script>
+	</body>
+</html>

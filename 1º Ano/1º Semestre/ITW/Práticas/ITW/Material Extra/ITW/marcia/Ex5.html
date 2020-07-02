@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<meta charset="UTF-8">
+
+
+
+<body>
+<form name="InformacaoPessoal" action="http://192.168.160.36/FormEcho.aspx" method="post"><br/>
+<table>
+	
+	<tr>
+		<td colspan="2">
+			<fieldset>
+				<legend> Informação pessoal </legend>
+					<table>
+						<tr>
+							<td><label for="Curso"> Curso </label></td> 	<td><select id="Curso" name="Curso">
+																					<option value="1">Licenciatura em Engenharia Informática</option>
+																					<option value="2">Mestrado Integrado em Engenharia de Computadores e Telemática</option>
+																					<option value="3">Mestrado Integrado em Engrnharia Eletŕonica e Telecomunicações</option>
+																					<option value="4">Outro</option>
+																				</select>
+																			<br>
+																			</td>
+						</tr>
+						<tr>
+							<td><label for="FirstName"> First Name: </label></td>	<td><input size="60" type="text" id="FirstName" name="First Name" placeholder="Digite o seu nome."/><br></td>
+						</tr>
+						<tr>
+							<td><label for="LastName"> Last Name: </label></td>	<td><input size="60" type="text" id="LastName" name="Last Name" placeholder="Digite o seu sobre nome."/><br></td>
+						</tr>
+						<tr>
+							<td><label for="Password"> Password: </label></td>	<td><input size="60" type="password" id="Password" name="Password" placeholder="Digite a sua palavra pass"/></br></td>
+						</tr>
+					</table>
+			</fieldset>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<fieldset>
+				<legend> Comments </legend>
+					<textarea name="Comments" rows="4" cols="80" placeholder="Insira os seus comentários"></textarea>
+			</fieldset>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<fieldset>
+				<legend> Meios de Transporte </legend>												
+					<input type="checkbox" name="Vehicle" value="Bicicleta">Bicicleta<br>
+					<input type="checkbox" name="vehicle" value="Carro">Carro<br>
+					<input type="checkbox" name="vehicle" value="Comboio">Comboio
+			</fieldset>
+			<br>
+		</td>
+		
+		<td>
+			<fieldset>
+				<legend> Cor Preferida </legend>
+					<input type="radio" name="Color" value="Azul">Azul<br>
+					<input type="radio" name="Color" value="Verde">Verde<br>
+					<input type="radio" name="Color" value="Vermelho">Vermelho<br>
+					<input type="radio" name="Color" value="Outra">Outra
+			</fieldset>
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="right"><input type="Submit" name="Submit" value="Submit Query"/></td>	<td><input type="reset" name="Reset" value="Reset"/></td>
+	</tr>
+	
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+4<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <style>
+        .box {width:50%; float:left;}
+    </style>
+</head>
+<body>
+    <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+        <fieldset>
+            <legend>Informação pessoal</legend>
+            <label for="curso">Curso</label>
+            <select id="curso" name="Curso">
+                    <option value="1">Mestrado integrado em Engenharia de Computadores e Telemática</option>
+                    <option value="2">Mestrado integrado em Engenhari Eletrónica e Telecomunicações</option>
+                    <option value="3" selected="selected">Licenciatura em Engenharia Informática</option>
+            </select><br /><br />
+            <label for="firstnome">First Name:</label>
+            <input type="text" id="firstnome" name="Firstname" placeholder="Digite o seu nome" value="Joaquim" /><br /><br />
+            <label for="lastnome">Last Name:</label>
+            <input type="text" id="lastnome" name="Lastname" placeholder="Digite o seu sobrenome" /><br /><br />
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="Password" placeholder="Digite a sua palavra passe" /><br /><br />
+        </fieldset><br />
+        <fieldset>
+	    <label for="comments"></label>
+            <legend>Comments</legend>
+            <textarea id="comments" name="Comments" rows="4" cols="80" placeholder="Insira os seus comentários" >
+            </textarea>
+        </fieldset><br />
+        <fieldset>
+            <div class="box">
+	        <label for="trans"></label>
+            <legend>Meios de Transporte</legend>
+            <input type="checkbox" id="trans" name="vehicle" value="Bicicleta">Bicicleta<br />
+            <input type="checkbox" id="trans" name="vehicle" value="Carro">Carro<br />
+            <input type="checkbox" id="trans" name="vehicle" value="Comboio">Comboio<br />        
+            </div>
+            <div class="box">
+	        <label for="cor"></label>
+            <legend>Cor preferida</legend>
+            <input type="radio" id="cor" name="color" value="Azul">Azul<br />
+            <input type="radio" id="cor" name="color" value="Verde">Verde<br />
+            <input type="radio" id="cor" name="color" value="Vermelho">Vermelho<br />
+            <input type="radio" id="cor" name="color" value="Outra">Outra<br />
+            </div>
+        </fieldset><br />
+	    <label for="submit"></label>
+        <input id="submit" name="Button" type="Submit" />
+    </form>
+</body>
+</html>

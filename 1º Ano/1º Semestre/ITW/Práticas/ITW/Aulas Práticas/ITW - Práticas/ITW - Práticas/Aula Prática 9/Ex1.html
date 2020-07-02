@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .myFrame {
+            width: 100%;
+            height: 350px;
+            padding: 0 0 0 0%;
+            border: none
+        }
+    </style>
+</head>
+<body>
+    <iframe class="myFrame" id="map"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBrKwpbb4f8yLnw50xLSHJpGOwiMmB3OXI
+            &q=world" allowfullscreen>
+    </iframe>
+    <div class="container">
+        <h2>Pesquisa de Local</h2>
+        <div class="form-group row">
+            <label class="col-lg-2 col-md-2 control-label text-right" for="local">Local:</label>
+            <div class="col-lg-8 col-md-8"><input type="text" id="local" class="form-control" value="" placeholder="Local (ex: Lisboa, Aveiro, Porto...)" /></div>
+            <div class="col-lg-2 col-md-2"><button type="button" class="btn btn-default" onclick="changeLocal ()"><i class="fa fa-search" aria-hidden="true"></i></button></div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 control-label text-right" for="local">Search:</label>
+            <div class="col-lg-8"><input type="text" id="search" class="form-control" value="" placeholder="Locais e categorias (ex: livrarias, farmácias..)"/></div>
+            <div class="col-lg-2"><button type="button" onclick="search()" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button></div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 control-label text-right" for="local">Directions:</label>
+            <div class="col-lg-8"><input type="text" id="origin" class="form-control" value="" placeholder="Origem"/></div>
+            <div class="col-lg-2"><button type="button" class="btn btn-default" onclick="directions()"><i class="fa fa-search" aria-hidden="true"></i></button></div>
+            <div class="col-lg-8 col-lg-offset-2"><input type="text" id="destination" class="form-control" value="" placeholder="Destino" /></div>
+            <div class="col-lg-8 col-lg-offset-2"><input type="text" id="waypoints" class="form-control" value="" placeholder="Paragens" /></div>
+        </div>
+    </div>
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+        <script src="../../Scripts/bootstrap.min.js"></script>
+        <script src="Ex1.js"></script>
+</body>
+</html>

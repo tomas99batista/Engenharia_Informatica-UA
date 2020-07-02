@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var operacao = "+";
+        function getOperacao() {
+            var e = document.getElementById("operacao");
+            operacao = e.options[e.selectedIndex].value;
+        }
+
+        function calcula() {
+            var op1 = document.getElementById("op1");
+            var op2 = document.getElementById("op2");
+            var res = document.getElementById("res");
+            switch (operacao) {
+                case "+":
+                    res.value = parseFloat(op1.value) + parseFloat(op2.value);
+                    break;
+                case "-":
+                    res.value = parseFloat(op1.value) - parseFloat(op2.value);
+                    break;
+                case "*":
+                    res.value = parseFloat(op1.value) * parseFloat(op2.value);
+                    break;
+                case ":":
+                    res.value = parseFloat(op1.value) / parseFloat(op2.value);
+                    break;
+                case "%":
+                    res.value = parseFloat(op1.value) % parseFloat(op2.value);
+                    break
+                default:
+                    alert("Operação não definida");
+            }
+
+        }
+
+    </script>
+    <style>
+        <style > .cabeça {
+            margin: 0px;
+            padding: 0px;
+            height: 300px;
+            margin-bottom: 20px;
+            background: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center
+        }
+
+        .separator {
+            height: 51px;
+        }
+
+        .corpo {
+            text-align: center
+        }
+
+        .botao {
+            text-align: center
+        }
+
+        .cabeça {
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="cabeça"> <span class="glyphicon">&#x2b;</span> Calculadora <span class="glyphicon">&#x2212;</span> </div>
+
+    <div class="separator"></div>
+
+    <div class="corpo">
+        <input id="op1" />
+        <select id="operacao" onchange="getOperacao()">
+            <option value="+"> Soma </option>
+            <option value="-"> Subtração </option>
+            <option value="*"> Multiplicação </option>
+            <option value=":"> Divisão </option>
+            <option value="%"> Resto da Divisão Inteira </option>
+        </select>
+        <input id="op2" />
+        <input id="res" /><br />
+    </div>
+    <div class="separator"></div>
+    <div class="botao"><button onclick="calcula()">Calcular</button></div>
+</body>
+</html>

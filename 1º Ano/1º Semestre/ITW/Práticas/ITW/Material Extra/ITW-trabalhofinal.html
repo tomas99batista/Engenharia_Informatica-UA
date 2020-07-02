@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabalho Final</title>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body background="http://www.fullhdwpp.com/wp-content/uploads/Soft_Wheat_Field.jpg">
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+<!--Botao-->
+<select id="Authors" onchange="selecao()"> <!-- botão select onde estão todos os autores e faz com que selecionado um autor, mude as tabelas. (funcao selecao()) -->
+</select> <span class="glyphicon glyphicon-user"></span></div><br>
+
+
+<!--Tabs-->
+<br><div> <!-- nome e caracteristicas das tabs que recebem as tabelas -->
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active">
+			<a href="#tab-1" role="tab" data-toggle="tab">Obras <span class="glyphicon glyphicon-book"></span></a></li>
+		<li role="presentation">
+			<a href="#tab-2" role="tab" data-toggle="tab">Vendas <span class="glyphicon glyphicon-euro"></span></a></li>
+		<li role="presentation">
+			<a href="#tab-3" role="tab" data-toggle="tab">Informações do Autor <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+	</ul>
+</div>
+
+<div class="tab-content" style="min-height: 400px;"> <!-- conteudo das tabs que vai ser dado por funçoes representadas em baixo -->
+	<div class="tab-pane fade in active" id="tab-1">
+		<div id="obras">
+		</div>
+	</div>
+
+	<div class="tab-pane fade" id="tab-2">
+		<div id="vendas">
+		</div>
+	</div>
+
+	<div class="tab-pane fade" id="tab-3">
+		<div id="info">
+		</div>
+	</div>
+</div>
+
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Trabalho Final</strong>
+                    </h4>
+                    <p>Claudio Santos<br>Hugo Pintor</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<span id="oculto"></span>
+
+
+		<script type="text/javascript">// Esta funcção ajax, vai recolher as informações do ficheiro json da base de dados que me permite gerar o menu select
+			var myUrl = "http://192.168.160.36/JSON/getAuthors.aspx";	
+			$.ajax({
+			type: "GET",
+			url: myUrl,
+			data: { numAuthors: 23 },
+			dataType: "jsonp",
+			success: menuselect,
+			error: function (xhr, status, err) {
+			}
+			});
+
+			var myUrl = "http://192.168.160.36/JSON/getAuthors.aspx";// Este segundo ajax utiliza exatamente o mesmo url mas serve para gerar a tab das informaçoes do autor
+			$.ajax({
+			type: "GET",
+			url: myUrl,
+			data: { numAuthors: 23 },
+			dataType: "jsonp",
+			success: oculto,
+			error: function (xhr, status, err) {
+			}
+			});
+
+
+
+
+			function menuselect(authors){ //Função que gera o menu select a partir dó ficheiro json fornecido pela primeira função ajax
+				var authorsSelect = document.getElementById("Authors");
+				for (var i = 0; i < authors.length; i++) {
+				var option = document.createElement("option");
+				option.text = authors[i].name;
+				option.value = authors[i].ID;
+				authorsSelect.add(option);
+				}
+			}
+
+			function selecao(){ //Esta função permite-nos retirar o "value" do autor selecionado para que se possa alterar as tabelas
+				var elemento = event.target;
+				var elementoSeleccionado = elemento.options[elemento.selectedIndex];
+				autor = elementoSeleccionado.value;
+				obras_and_vendas_http(autor)
+				tab_info(autor);
+			}
+
+			function oculto(Authors){
+				document.getElementById("oculto").text = Authors
+			}
+
+
+			function obras_and_vendas_http(autor){//Funcao ajax que me permite recolher as informações sobre as obras e as vendas de cada autor a partir do "value" do autor selecionado no menu select
+				var myUrl = "http://192.168.160.36/JSON/getAuthorTitles.aspx?author_ID="+autor;	
+				$.ajax({
+				type: "GET",
+				url: myUrl,
+				dataType: "jsonp",
+				success: tab_obras,
+				error: function (xhr, status, err) {
+				}
+				});
+				var myUrl = "http://192.168.160.36/JSON/getAuthorSales.aspx?author_ID="+autor;
+				$.ajax({
+				type: "GET",
+				url: myUrl,
+				dataType: "jsonp",
+				success: tab_vendas,
+				error: function (xhr, status, err) {
+				}
+				});
+				}
+
+			function tab_obras(obras) { //Função que me permite gerar a tabela das obras através das informações dadas pela função diretamente a cima
+				if (obras == ""){
+					document.getElementById("obras").innerHTML = "<h2 style='color:red'>DATA NOT FOUND</h2>"
+				}
+				else{
+				var out = "<table class=\"table table-striped table-bordered\"><tr><td>Titúlo</td><td>Tipo</td><td>Preço</td><td>Vendas este ano</td><td>Notas</td><td>Data de publicação</td><td>Autores</td>";
+				var i;
+					for(i=0;i<obras.length;i++){
+						out += '<tr><td>'+obras[i].title+'</td><td>' + obras[i].type + '</td><td>'+obras[i].price+'</td><td>'+obras[i].ytd_sales+'</td><td>'+obras[i].notes+'</td><td>'+obras[i].pubdate+'</td><td>'+obras[i].authors+'</td></tr>';
+					}
+				out += "</table>";
+			document.getElementById("obras").innerHTML = out;
+		}
+	}
+
+
+			function tab_vendas(vendas) { //Funciona exatamente da mesma maneira que a função a cima, só que esta gera a tabela das vendas
+				if (vendas == ""){
+					document.getElementById("vendas").innerHTML = "<h2 style='color:red'>DATA NOT FOUND</h2>"
+				}
+				else{
+				var out = "<table class=\"table table-striped table-bordered table-condensed\"><tr><th>Título</th><th>Vendas</th></tr>";
+				var i;
+				var e;
+				for(i=0;i<vendas.length;i++){
+				out +='<tr><td>' + vendas[i].title + '</td><td>' + "<table class=\"table table-striped table-bordered table-condensed\"><tr><th>Número de Encomenda</th><th>Data da encomenda</th><th>Quantidade</th><th>Termos de pagamento</th><th>Loja</th></tr>";
+				for(e=0;e<vendas[i]['sales'].length;e++){
+					out += "<tr><td>" + vendas[i]['sales'][e].orderNum + "</td>" + "<td>" + vendas[i]['sales'][e].orderDate + "</td>" + "<td>" + vendas[i]['sales'][e].quantity + "</td>" + "<td>" + vendas[i]['sales'][e].payTerms + "</td>" + "<td>" + vendas[i]['sales'][e]['store'].name + "<br>" + vendas[i]['sales'][e]['store'].address + "<br>" + vendas[i]['sales'][e]['store'].city + ", " + vendas[i]['sales'][e]['store'].state + ", " + vendas[i]['sales'][e]['store'].zip + "</td>" + "</tr>";
+					}
+						out += "</table></td></tr>";
+			    }
+			 out += "</table>";
+		document.getElementById("vendas").innerHTML = out;
+	}
+}
+
+			function tab_info(autor){ //Esta recolhe as informações de uma forma um pouco mais complexa, pois como não conseguia passar as informações diretamente numa variável para esta função, por isso atribui o conteúdo ao text de um <span> sem conteúdo utilizando-o assim nesta função para obter as informações necessárias, para que se fizesse a comparação do valor do select com as informações obtidas
+				authors = document.getElementById("oculto").text
+				var out ="<table>";
+				var i;
+					for (i=0;i<authors.length;i++){
+						if(authors[i].ID == autor){
+								out += '<tr><td>Nome:</td><td>' + authors[i].name + '</td></tr><tr><td>Telefone:</td><td>' + authors[i].phone + '</td></tr><tr><td>Morada:</td><td>' + authors[i].address + '</td></tr><tr><td>Cidade:</td><td>' + authors[i].city + '</td></tr><tr><td>Estado:</td><td>' + authors[i].state + '</td></tr><tr><td>Código Postal:</td><td>' + authors[i].zip + '</td></tr></table>';
+							}
+						}	
+					document.getElementById("info").innerHTML = out;
+			}
+//fazer mapas
+		</script>
+	</body>
+</html>

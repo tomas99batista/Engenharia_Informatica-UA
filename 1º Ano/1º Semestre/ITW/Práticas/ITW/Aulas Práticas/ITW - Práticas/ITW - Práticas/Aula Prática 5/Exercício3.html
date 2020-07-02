@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculadora ITW</title>
+    <link href="../../packages/bootstrap.3.3.7/content/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../packages/FontAwesome.4.7.0/Content/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+</head>
+<body style="font-family: 'Slabo', 'Times New Roman', Times, serif">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color: black; font-size: large;"><i class="fa fa-calculator" aria-hidden="true"></i> Calculadora</a>
+            </div>
+        </div>
+    </nav>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="form-group">
+            <div class="col-md-4"><input placeholder="Escreva um número" type="text" class="form-control" id="op1" value="" /></div>
+            <div class="col-md-4">
+                <select id="operacao" class="form-control" onchange="getOperacao()">
+                    <option value="+"> Soma </option>
+                    <option value="-"> Subtração </option>
+                    <option value="*"> Multiplicação </option>
+                    <option value=":"> Divisão </option>
+                </select>
+            </div>
+            <div class="col-md-4"><input placeholder="Escreva um número" type="text" class="form-control" id="op2" value="" /></div>
+            <div class="col-md-12">
+                <label style="margin-top: 2%" for="res">Resultado:</label>
+                <input type="text" class="form-control" id="res" value="" /><br />
+            </div>
+        </div>
+        <div style="text-align:center;"><button class="btn btn-default" style="background-color: lightgray; border: 1px gray solid;" onclick="calculo()">Calcular</button></div>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color: black; font-size: 14px;">&copy; I always leave everything in the field...</a>
+            </div>
+        </div>
+    </nav>
+    <script src="MyJavaScript3-2.js"></script>
+</body>
+</html>

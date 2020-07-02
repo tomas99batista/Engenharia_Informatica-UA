@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
+    
+    <style type="text/css">
+        .no_error {
+            display: none;
+        }
+
+        .error {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel text-center"><h2>Concerto</h2></div>
+    <div class="container">
+        <form name="FormulárioConcenrto" action="http://192.168.160.36/FormEcho.aspx" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome:</label>
+                <div>
+                    <input type="text" name="Nome" class="form-control" id="nome" placeholder="Nome">
+                    <div id="nome_Error" class="no_error form-control-static text-danger bg-danger">
+                        &nbsp;<i class="fa fa-exclamation-triangle"></i> The First Name should have, at least, 10 chars and 100 chars tops!&nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Morada:</label>
+                <div>
+                    <textarea class="form-control" name="Morada" id="morada" placeholder="Morada"></textarea>
+                    <div id="morada_Error" class="no_error form-control-static text-danger bg-danger">
+                        &nbsp;<i class="fa fa-exclamation-triangle"></i> The Adress should have, at least, 20 chars and, 200 chars tops!&nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">E-Mail:</label>
+                <div>
+                    <input type="text" class="form-control" name="E-mail" id="email" placeholder="Email">
+                    <div id="email_Error" class="no_error form-control-static text-danger bg-danger">
+                        &nbsp;<i class="fa fa-exclamation-triangle"></i> Linha de texto com um mínimo de 10 caracteres  e máximo de 100; Deve possuir o caracter @ e um ponto depois e antes do final!&nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputLocal1">Local:</label>
+                <div class="container" id="localX">
+                        <label class="checkbox"></label>
+                        <input type="checkbox" class="check" id="local1" name="Local" value="100" > Relva (frente) - 100€
+                        <label class="checkbox"></label>
+                        <input type="checkbox" class="check" id="local2" name="Local" value="80"> Relva (trás) - 80€
+                        <label class="checkbox"></label>
+                        <input type="checkbox" class="check" id="local3" name="Local" value="50"> Bancada (lateral) - 50€
+                        <label class="checkbox"></label>
+                        <input type="checkbox" class="check" id="local4" name="Local" value="65"> Bancada (central) - 65€
+                </div>
+                <div id="local_Error" class="no_error form-control-static text-danger bg-danger">
+                    &nbsp;<i class="fa fa-exclamation-triangle"></i> Escolher, pelo menos dois locias!&nbsp;
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="max_price">Valor Máximo a Pagar:</label>
+                <input type="text" class="form-control" name="Valor_a_pagar" readonly id="val_max" value="0">
+            </div>
+            <div class="container text-center">
+                <input type="submit" class="btn btn-primary" id="botao" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.js"></script>
+    <script src="Ex1 - jQuery.js"></script>
+</body>
+</html>

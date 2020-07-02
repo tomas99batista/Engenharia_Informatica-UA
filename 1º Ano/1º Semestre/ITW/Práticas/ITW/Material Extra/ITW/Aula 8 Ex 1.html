@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Aula 7 Ex 1 </title>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+		</script>
+	
+		<style type="text/css">
+			.no_error{display: nome;}
+			.error{display: inline-block;}
+		</style>
+	</head>
+
+	<body>
+		<form name="dados" method="post">
+			<div class="page-header"></div>
+				<div class="row">	
+					<div class="col-xs-2 form-control-static text-right"><label for="Nome"></label>Nome:</div>
+					<div class="col-xs-10"><input type="text" name="nome" id="nome" placeholder="Digite o seu nome" class="form-control">	
+						<div id="nomeerro" class="no_error form-control-static bg-danger"> 
+						&nbsp;<i class="fa fa-exclamation-triangle"></i>O nome deve ter entre 10 a 100 caracteres!&nbsp;</div>
+					</div>	
+				</div>	
+
+				<div class="row">
+					<div class="col-xs-2 form-control-static text-right"> <label for="Morada"></label>Morada:</div>
+					<div class="col-xs-10"><input type="text" name="morada" id="morada" placeholder="Digite a sua morada" class="form-control"></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-2 form-control-static text-right"><label for="E-mail"></label>E-mail:</div>
+					<div class="col-xs-10"><input type="text" name="email" id="email" placeholder="Digite o seu e-mail" class="form-control"></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-2 form-control-static text-right">Local: </div>
+					<div class="col-xs-4">
+						<fieldset>
+							</br>
+							<input type="checkbox" name="local" value="a">Relva Frente (100€)</br>
+							<input type="checkbox" name="local" value="b">Relva Trás (80€)</br>
+							<input type="checkbox" name="local" value="c">Bacada Lateral (50€)</br>
+							<input type="checkbox" name="local" value="d">Relva Central (65€)</br>
+						</fieldset>	
+					</div>			
+				</div>
+				<div class="row">
+					<div class="col-xs-2 form-control-static text-right"><label for="Preço"></label>Preço: </div>
+					<div class="col-xs-4"> <input type="text" placeholder="Será apresentado o preço após o envio" name="preco" id="preco" class="form-control"></div>
+				</div>
+				
+				<div class="row">
+					<div class="row text-center">
+						<div ><input type="Submit" value="Enviar" onclick="return testFormValid()" class="btn btn-primary" ></div>
+						<div ><input type="Reset" value="Limpar" class="btn btn-primary"></div>
+					</div>
+				</div>
+			
+			</div>
+		</form>
+		<script type="text/javascript" src="function.js"></script>
+	</body>
+</html>

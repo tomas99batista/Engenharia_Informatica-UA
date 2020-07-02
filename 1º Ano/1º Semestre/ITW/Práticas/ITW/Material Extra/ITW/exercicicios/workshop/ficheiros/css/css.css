@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.wrap {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    background-color: green;
+}
+
+.wrap header,
+.wrap .slider,
+.wrap article {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px;
+    background-color: aqua;
+}
+
+.wrap header img{
+    width: 80px;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 10px;
+
+    margin: 10px 0 0 30px;
+}
+
+.wrap header nav {
+    width: 135px;
+    height: 30px;
+    background-color: red;
+    display: inline-block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 30px;
+
+    margin: 20px 30px 0 0;
+}
+
+.wrap header nav ul {
+    display: block;
+}
+
+.wrap header nav ul li {
+    height: 30px;
+    width: 30px;
+    background-color: #666;
+    list-style: none;
+    display: inline-block;
+    margin-right: 5px;
+    background-size: contain;
+    background-position: center;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+
+}
+.wrap header nav ul li:hover {
+    background-color: #fff;
+}
+
+.wrap header nav ul li.last {
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: #666;
+    background-image: url('../img/menu.png');
+    background-size: 30px;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+.wrap header nav ul li.menu:hover {
+    width: 100px;
+    height: 120px;
+}
+
+.wrap header nav ul li.menu ul li {
+    width: 100%;
+    background-color: transparent;
+    background-image: none;
+}
+.wrap header nav ul li.menu ul li.submenu:hover {
+    background-color: #fff;
+    color: #666;
+}
+
+.facebook {
+     background-image: url('../img/facebook.png');
+ }
+.in {
+    background-image: url('../img/linkedin.png');
+}
+.mail {
+    background-image: url('../img/mail.png');
+}
+.facebook:hover {
+    background-image: url('../img/facebook_hover.png');
+}
+.in:hover {
+    background-image: url('../img/linkedin_hover.png');
+}
+.mail:hover {
+    background-image: url('../img/mail_hover.png');
+}

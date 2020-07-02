@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form name="PersonalData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+        <fieldset>
+            <legend>Informação Pessoal</legend>
+            <dl>
+                <dt>Curso:</dt>
+                <dd>
+                    <select name="Curso">
+                        <option value="1" selected="selected">Licenciatura em Engenharia Informática</option>
+                        <option value="2">Mestrado Integrado em Engenharia de Computadores e Telemática</option>
+                        <option value="3">Mestrado Integrado em Engenharia Eletrónica e de Comunicações</option>
+                        <option value="4">Outro</option>
+                    </select>
+                </dd>
+                <dt>First Name:</dt>
+                <dd>
+                    <input type="text" name="FirstName" value="Joaquim" placeholder=" digite o seu nome" />
+                </dd>
+                <dt>Last Name:</dt>
+                <dd>
+                    <input type="text" name="LastName" placeholder=" Digite o seu sobrenome" />
+                </dd>
+                <dt>Password:</dt>
+                <dd>
+                    <input type="password" name="Password" placeholder="Digite a sua palavra passe" />
+                </dd>
+            </dl>
+        </fieldset>
+        <fieldset>
+            <legend>Comments</legend>
+            <textarea name="Comments" rows="5" cols="165" placeholder="Insira os seus comentários"></textarea>
+        </fieldset>
+        <fieldset style="width:601px; float:left">
+            <legend>Meios de transporte</legend>
+                <input type="checkbox" name="vehicle" value="Bicicleta">Bicicleta<br />
+                <input type="checkbox" name="vehicle" value="Carro">Carro<br />
+                <input type="checkbox" name="vehicle" value="Comboio">Comboio<br />
+        </fieldset>
+        <fieldset>
+            <legend>Cor preferida</legend>
+                <input type="radio" name="color" value="Azul">Azul<br />
+                <input type="radio" name="color" value="Verde">Verde<br />
+                <input type="radio" name="color" value="Vermelho">Vermelho<br />
+                <input type="radio" name="color" value="Outra">Outra<br />
+        </fieldset>
+        
+        <div style="text-align:center; clear:both; ">
+            <hr />
+            <input type="submit" name="submit_button" value="Submeter" style="width: 100px; height: 40px" />
+            <input type="reset" name="rest_button" value="Reset" style="width: 100px; height: 40px" />
+        </div>
+    </form>
+</body>
+</html>
+    <!--perguntar ao stor a razão  de haver tantos problemas no formulário segundo a verficação
+    no site "https://achecker.ca/checker/index.php"-->
+    <!--perguntar ao stor como por as caixas "Meios de trasporte" e "Cor preferida" numa divisão 50/50
+    do espaço considerando o redimensionamento infinito da janela(aquela proporção tem de se manter sempre constante!!-->

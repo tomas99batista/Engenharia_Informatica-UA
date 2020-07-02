@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aula 7</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style>
+	.no_error{display:none !important;}
+	.error{display: block !important; margin-bottom:5px; border-radius: 3px; text-align:center;}
+</style>
+<script type="text/javascript">
+	function validar(){
+
+		if(document.getElementById('PersonData_Local1').checked){
+			valor="100€";
+		}else if(document.getElementById('PersonData_Local2').checked){
+			valor="80€"
+		}else if(document.getElementById('PersonData_Local4').checked){
+			valor="65€"
+		}else if(document.getElementById('PersonData_Local3').checked){
+			valor="60€"
+		}else{
+			valor=""
+		}
+
+		var avancar = 1
+		var name = document.getElementById("PersonData_Name")
+		var name_error = document.getElementById("PersonData_Name_Error")
+		var adress = document.getElementById("PersonData_Adress")
+		var adress_error = document.getElementById("PersonData_Adress_Error")
+		var mail = document.getElementById("PersonData_Email")
+		var mail_error = document.getElementById("PersonData_Email_Error")
+		var local = document.getElementById("PersonData_Local")
+		var local_error = document.getElementById("PersonData_Local_Error")
+		var maxm = document.getElementById("PersonData_pay")
+		
+		maxm.value=valor
+		
+		if (name.value.trim().length < 10 || name.value.trim().length > 100){
+			if(name_error.classList.contains("no_error")){
+				name_error.classList.remove("no_error")
+				name_error.classList.add("error")
+			}
+			avancar=0
+		}else{
+			if(name_error.classList.contains("error")){
+				name_error.classList.remove("error")
+				name_error.classList.add("no_error")
+			}
+			avancar=1
+		}
+		
+		
+		if (adress.value.trim().length < 20 || adress.value.trim().length > 200){
+			if(adress_error.classList.contains("no_error")){
+				adress_error.classList.remove("no_error")
+				adress_error.classList.add("error")
+			}
+			avancar=0
+		}else{
+			if(adress_error.classList.contains("error")){
+				adress_error.classList.remove("error")
+				adress_error.classList.add("no_error")
+			}
+			avancar=1
+		}
+		
+		if (mail.value.trim().length < 10 || mail.value.trim().length > 100){
+			if(mail_error.classList.contains("no_error")){
+				mail_error.classList.remove("no_error")
+				mail_error.classList.add("error")
+			}
+			avancar=0
+		}else{
+			if(mail_error.classList.contains("error")){
+				mail_error.classList.remove("error")
+				mail_error.classList.add("no_error")
+			}
+			avancar=1
+		}
+		
+        if(document.querySelectorAll('input[type="checkbox"]:checked').length<2){
+			if(local_error.classList.contains("no_error")){
+				local_error.classList.remove("no_error")
+				local_error.classList.add("error")
+			}
+			avancar=0
+		}else{
+			if(local_error.classList.contains("error")){
+				local_error.classList.remove("error")
+				local_error.classList.add("no_error")
+			}
+			avancar=1
+		}
+		
+		if (avancar==1)
+			document.PersonData.action = "http://192.168.160.36/FormEcho.aspx"
+			
+		return true
+	}
+</script>
+
+</head>
+<body>
+	<form name="PersonData"  method="post"  >
+    		<div class="page-header"><h1>Personal Info</h1></div>
+            <input type="hidden" name="FormName" id="PersonData_FormName" value="UserForm" />
+			<div class="col-xs-2 form-control-static text-right">Nome:</div>
+            <div class="col-xs-10">
+            	<input type="text" name="Name" id="PersonData_Name" placeholder="(10 a 100 caracteres)" class="form-control" />
+            	<div id="PersonData_Name_Error" class="no_error form-control-static text-danger bg-danger">    !!! - O nome deve ter 10 a 100 caracteres! <br></div>
+            </div>
+            
+            
+            <div class="col-xs-2 form-control-static text-right">Morada:</div>
+            <div class="col-xs-10">
+            	<input type="text" name="Adress" id="PersonData_Adress" placeholder="(20 a 200 caracteres)" class="form-control" />
+                <div id="PersonData_Adress_Error" class="no_error form-control-static text-danger bg-danger">    !!! - A Morada deve ter 20 a 200 caracteres! <br></div>
+            </div>
+            
+            
+            <div class="col-xs-2 form-control-static text-right">E-Mail:</div>
+            <div class="col-xs-10">
+            	<input type="email" name="Email" id="PersonData_Email" placeholder="(10 a 100 caracteres)" class="form-control" />
+            	<div id="PersonData_Email_Error" class="no_error form-control-static text-danger bg-danger">    !!! - O nome deve ter 10 a 100 caracteres! <br></div>
+            </div>
+            
+            
+            <div class="col-xs-2 form-control-static text-right">Local:</div>
+            <div class="col-xs-10">
+            	<div class="col-xs-3 form-control-static"><input type="checkbox" id="PersonData_Local1" name="Local" value="RF" > Relva - Frente</div>
+				<div class="col-xs-3 form-control-static"><input type="checkbox" id="PersonData_Local2" name="Local" value="RA"> Relva - Trás </div>
+                <div class="col-xs-3 form-control-static"><input type="checkbox" id="PersonData_Local3" name="Local" value="BL" > Bancada - Lateral</div>
+				<div class="col-xs-3 form-control-static"><input type="checkbox" id="PersonData_Local4" name="Local" value="BC"> Bancada - Central </div>
+                <div style="height: 25px; margin-top:35px" id="PersonData_Local_Error" class="no_error form-control-static text-danger bg-danger">    !!! - Deve selecionar pelo menos 2 locais! <br></div>
+            </div>
+                
+            </div>
+                
+                
+            <div class="col-xs-2 form-control-static text-right">Máximo a Pagar:</div>
+            <div class="col-xs-10"><input type="text" disabled="disabled" name="Pay" id="PersonData_pay" class="form-control" /></div>
+
+            
+            <div class="col-xs-12 text-center"><hr /></div>
+            <div class="col-xs-12 text-center"><input onClick="return validar()"  name="Button" id="Submit data"  class="btn btn-primary" value="Submeter"></div>
+
+	</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Discription"  content="">
+		<title>Exercicio Boletim Inscrição</title>
+		<script type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="Formulário_amarelo.css">
+	</head>
+	<body>
+		<form name="Boletimdeinscrição" action="http://192.168.160.36/FormEcho.aspx" method="post">
+			<div id="Form1" style="width:80%">
+				<table style="width:825px" border="1">
+					<tr>
+						<th colspan="2" id="BI" style="height:50px"><h2>Boletim de inscrição</h2></th>
+					</tr>
+					<tr>
+						<th id="">
+							<div>
+							<label for="Fn" style="width:100px">Name</label>
+							</div>
+						</th>
+						<td id="">
+							<input style="width:300px" type="text" id="Fn" name="Name" placeholder="Insira o seu nome">
+							<span id=""></span>
+						</td>
+					</tr>
+
+					<tr>
+						<th id="">
+							<div>
+							<label for="login">Login</label>
+							</div>
+						</th>
+						<td id="">
+							<input style="width:300px" type="text" id="login" name="Login" placeholder="Insira o seu login">
+							<span id=""></span>
+						</td>
+					</tr>
+
+					<tr>
+						<th id="">
+							<div>
+							<label for="Password">Password</label>
+							</div>
+						</th>
+						<td id="">
+							<input style="width:300px" type="text" id="Password" name="Passw" placeholder="Insira a sua palavra passe">
+							<span id=""></span>
+						</td>
+					</tr>
+				</table>	
+			</div>
+
+
+
+
+			<div id="" style="width:70%">
+				<table style="width:825px" border="1">
+					
+					<tr>
+						<th rowspan="2" id="" style="width:100px">
+							<label>Disciplinas</label>
+							<span id=""></span>
+						</th>
+
+						<td id="" style="339px">
+							<fieldset id="" >
+								<legend>1ºsemestre - Curriculares</legend>
+								<input type="checkbox" name="Csem1" id="" value="Álgebra Linear e Geometria Analítica">Álgebra Linear e Geometria Analítica</input></br>
+								<input type="checkbox" name="Csem1" id="" value="Elementos de Física">Elementos de Física</input></br>
+								<input type="checkbox" name="Csem1" id="" value="Cálculo I">Cálculo I</input></br>
+								<input type="checkbox" name="Csem1" id="" value="Introdução às Tecnologias Web">Introdução às Tecnologias Web</input></br>
+								<input type="checkbox" name="Csem1" id="" value="Fundamentos de Programação">Fundamentos da Programação</input></br>
+							</fieldset>
+						</td>
+
+						<td id="">
+							<fieldset id="">
+								<legend>2ºsemestre - Curriculares</legend>
+								<input type="checkbox" name="Csem2" id="" value="Modelação e Análises de Sistemas"></input></br>
+								<input type="checkbox" name="Csem2" id="" value="Cálculo II">Cálculo II</input></br>
+								<input type="checkbox" name="Csem2" id="" value="Matemática Discreta">Matemática Discreta</input></br>
+								<input type="checkbox" name="Csem2" id="" value="Introdução á Arquitetura de Computadores">Introdução á Arquitetura de Computadores</input></br>
+								<input type="checkbox" name="Csem2" id="" value="Programação Orientada a Objetos">Programação Orientada a Objetos</input></br>
+							</fieldset>
+						</td>
+					</tr>
+
+					<tr>
+						<td id="" >
+							<fieldset id="">
+								<legend>1ºsemestre- Opcionais</legend>
+								<input type="radio" name="Osem1" id="" value="Música">Música</input>
+								<input type="radio" name="Osem1" id="" value="Teatro">Teatro</input>
+								<input type="radio" name="Osem1" id="" value="Cinema">Cinema</input>
+								<input type="radio" name="Osem1" id="" value="Fotografia">Fotografia</input>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset>
+								<legend>2ºsemestre - Opcionais</legend>
+								<input type="radio" name="Osem2" id="" value="Música">Música</input>
+								<input type="radio" name="Osem2" id="" value="Teatro">Teatro</input>
+								<input type="radio" name="Osem2" id="" value="Cinema">Cinema</input>
+								<input type="radio" name="Osem1" id="" value="Fotografia">Fotografia</input>
+							</fieldset>
+						</td>
+					</tr>
+				</table>	
+			</div>
+
+			<div style="width:70%">
+				<center><input type="submit" onclick="return vaidar()"></input></center>
+			</div>
+		</form>
+	</body>
+</html>

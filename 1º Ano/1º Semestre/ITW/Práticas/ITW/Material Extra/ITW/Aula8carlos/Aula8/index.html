@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .no_error {
+            display: none;
+        }
+
+        .error {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+<body>
+    <form action="http://192.168.160.36/FormEcho.aspx" name="Inscriçao" method="post">
+        <center><h1 style="color:dodgerblue"><b>Inscrição para Concerto</b></h1></center>
+        <hr />
+
+        <label><b>Nome</b></label><input type="text" name="Nome" id="Inscriçao_Nome" value="" style="margin-left:30px" /><br /><br />
+        <div id="Inscriçao_Nome_Erro" class="no_error form-control-static text-danger bg-danger">
+            &nbsp;<i class="fa fa-exclamation-triangle"></i>O nome tem de ter no minimo 3 carateres! &nbsp;
+        </div>
+
+        <label><b>Morada</b></label><input type="text" name="Morada" id="Inscriçao_Morada" value="" style="margin-left:30px" /><br /><br />
+        <div id="Inscriçao_Morada_Erro" class="no_error form-control-static text-danger bg-danger">
+            &nbsp;<i class="fa fa-exclamation-triangle"></i>A morada tem de ter no minimo 3 carateres! &nbsp;
+        </div>
+
+        <label><b>Endereço de Email</b></label><input type="text" name="Email" id="Inscriçao_Email" style="margin-left:30px" /><br /><br />
+        <div id="Inscriçao_Email_Erro" class="no_error form-control-static text-danger bg-danger">
+            &nbsp;<i class="fa fa-exclamation-triangle"></i>O Email tem de ter no minimo 3 carateres! &nbsp;
+        </div>
+
+        <label><b>Local</b></label> <br />
+        <input type="checkbox" name="Local" id="Inscriçao_Local" style="margin-left:75px" value="Relva Frente" /> Relva Frente / 100€ <br />
+        <input type="checkbox" name="Local" id="Inscriçao_Local" style="margin-left:75px" value="Relva Trás" /> Relva Trás / 80€ <br />
+        <input type="checkbox" name="Local" id="Inscriçao_Local" style="margin-left:75px" value="Bancada Lateral" /> Bancada Lateral / 50€ <br />
+        <input type="checkbox" name="Local" id="Inscriçao_Local" style="margin-left:75px" value="Bancada Central" /> Bancada Central / 60€ <br /><br />
+
+        <label><b>Valor Máximo a Pagar</b></label> &nbsp; <input type="text" name="Valor" id="Inscriçao_Valor" />
+        <hr />
+
+        <center>
+            <input type="submit" value="Submeter" />
+            <input type="reset" />
+        </center>
+
+
+    </form>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function (event) {
+
+                var retVal = true;
+                if ($.trim($('#Inscriçao_Nome').val()).length < 3) {
+                    if ($('#Inscriçao_Nome_Erro').hasClass("no_error"))
+                        $('#Inscriçao_Nome_Erro').removeClass("no_error").addClass("error");
+                    retVal = false
+                }
+                else {
+                    if ($('#Inscriçao_Nome_Erro').hasClass("error"))
+                        $('#Inscriçao_Nome_Erro').removeClass("error").addClass("no_error");
+
+                }
+
+
+                if ($.trim($('#Inscriçao_Morada').val()).length < 3) {
+                    if ($('#Inscriçao_Morada_Erro').hasClass("no_error"))
+                        $('#Inscriçao_Morada_Erro').removeClass("no_error").addClass("error");
+                    retVal = false
+                }
+                else {
+                    if ($('#Inscriçao_Morada_Erro').hasClass("error"))
+                        $('#Inscriçao_Morada_Erro').removeClass("error").addClass("no_error");
+
+                }
+
+
+                if ($.trim($('#Inscriçao_Email').val()).length < 3) {
+                    if ($('#Inscriçao_Email_Erro').hasClass("no_error"))
+                        $('#Inscriçao_Email_Erro').removeClass("no_error").addClass("error");
+                    retVal = false
+                }
+                else {
+                    if ($('#Inscriçao_Email_Erro').hasClass("error"))
+                        $('#Inscriçao_Email_Erro').removeClass("error").addClass("no_error");
+
+                }
+                if ($('#Inscriçao_Local').val() == "Relva Frente") {
+                    $('#Inscriçao_Valor').val() == "100 €";
+                }
+                return retVal
+            })
+        })
+        
+
+
+    </script>
+
+</body>
+</html>

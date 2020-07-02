@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="../Scripts/jquery-3.2.1.slim.js"></script>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <link href="../Content/font-awesome.css" rel="stylesheet" />
+    <link href="mycss.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">*bolinha*</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="Countries.html">Countries</a></li>
+                <li class="active"><a href="Leagues.html">Leagues</a></li>
+                <li><a href="Teams.html">Teams</a></li>
+                <li><a href="Players.html">Players</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="page-header">
+                <h2>League Details</h2>
+            </div>
+        </div>
+
+        <!-- ko foreach: LeagueDetails -->
+        <div class="col-lg-1 col-lg-offset-1"><img style="height: 120px;text-align:right" data-bind=" attr: {src: 'logos/'+id+'.jpg'}" /></div>
+        <div class="col-lg-9" style="height: 120px">
+            <div class="col-lg-9">
+                <div class="col-lg-2" style="text-align:right; margin-right:1%;"><b>Name</b></div>
+                <div data-bind="text: name"></div>
+            </div>
+            <div class="col-lg-9">
+                <div class="col-lg-2" style="text-align:right; margin-right:1%;"><b>Country</b></div>
+                <div data-bind="html: countryName, attr:{ href: '/ProjetoFinal/#countries/'+country_id, title: countryName}"></div>
+            </div>
+            <div class="col-lg-9">
+                <div class="col-lg-2" style="text-align:right; margin-right:1%;"><b>Seasons</b></div>
+                <div data-bind="text: seasons"></div>
+            </div>
+            <div class="col-lg-9">
+                <div class="col-lg-2" style="text-align:right; margin-right:1%;"><b>Matches</b></div>
+                <div data-bind="text: matches"></div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if:error -->
+        <div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+        <!-- /ko -->
+
+        <div class="container" style="margin-top:10%;">
+            <div class="page-header">
+                <h2 data-bind="text:className"></h2>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom: 20px;">
+
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Acronym</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ko foreach: teams -->
+                        <tr>
+                            <td><div><img style="height: 30px; margin-right:2%;" data-bind="attr:{ src: 'https://cdn.sofifa.org/18/teams/'+team_fifa_api_id+'.png'}" /><a data-bind="html: team_long_name, attr:{ href: '#teams/'+id, title: team_long_name}"></a></div>
+                            <td><div><a data-bind="html: team_short_name,"></a></div></td>
+                        </tr>
+                        <!-- /ko -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- ko if:error -->
+            <div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+            <!-- /ko -->
+
+            <div class="bs-callout bs-callout-info" data-bind="html:description"></div>
+
+        </div>
+    </section>
+
+
+    <script>
+        var vm = function () {
+            console.log('ViewModel initiated...')
+            //---Variáveis locais
+            var self = this;
+            var leagueId = window.location.hash.substr(1)
+            var baseUri = 'http://192.168.160.28/football/api/' + leagueId;
+            self.className = 'League Teams';
+            self.description = 'This page aims to demonstrate the use of the football web API for countries and the interconnection with other entities.<br>Called method(s): <ul><li>' + baseUri + '</li></ul>';
+            self.error = ko.observable();
+            self.LeagueDetails = ko.observableArray([]);
+            self.teams = ko.observableArray([]);
+            //--- Internal functions
+            function ajaxHelper(uri, method, data) {
+                self.error(''); // Clear error message
+                return $.ajax({
+                    type: method,
+                    url: uri,
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: data ? JSON.stringify(data) : null,
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("AJAX Call[" + uri + "] Fail...");
+                        self.error(errorThrown);
+                    }
+                })
+            }
+            //--- External functions (accessible outside)
+            getLeagueDetails = function () {
+                console.log('CALL: getLeagueDetails...')
+                ajaxHelper(baseUri, 'GET').done(function (data) {
+                    self.LeagueDetails(data);
+                    self.teams(data.teams);
+                    console.log(self.teams)
+                });
+            };
+            //---- initial call
+            getLeagueDetails();
+        };
+        ko.applyBindings(new vm)
+
+    </script>
+
+</body>
+</html>

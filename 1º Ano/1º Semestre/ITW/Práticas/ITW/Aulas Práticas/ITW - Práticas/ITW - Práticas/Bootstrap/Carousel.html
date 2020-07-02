@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstraptrial</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .item {
+            z-index: -100;
+            height: 300px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+            .item:nth-child(1) {
+                background-image: url('http://conchasdemocambique.web.ua.pt/images/slide-01.jpg');
+            }
+
+            .item:nth-child(2) {
+                background-image: url('http://conchasdemocambique.web.ua.pt/images/slide-02.jpg');
+            }
+
+            .item:nth-child(3) {
+                background-image: url('http://conchasdemocambique.web.ua.pt/images/slide-03.jpg');
+            }
+
+            .item:nth-child(4) {
+                background-image: url('http://conchasdemocambique.web.ua.pt/images/slide-04.jpg');
+            }
+    </style>
+</head>
+<body>
+
+
+
+    <div id="theCarousel" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="theCarousel" data-slide-to="0" class="active"></li>
+
+            <li data-target="theCarousel" data-slide-to="1"></li>
+
+            <li data-target="theCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+
+            <div class="item active">
+                <div class="slide1"></div>
+                <div class="carousel-caption">
+                    <h1>Amazing Background</h1>
+                    <p>Thousands of Backgrounds for Free</p>
+                    <p><a href="" class="btn btn-primary btn-sm">Get Them Now</a></p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="slide2"></div>
+                <div class="carousel-caption">
+                    <h1>Thousands of Colors</h1>
+                    <p>Every Colours U can Imagine</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="slide3"></div>
+                <div class="carousel-caption">
+                    <h1>Amazing Illustrations</h1>
+                    <p>AND ALL FOR FREE</p>
+                </div>
+            </div>
+
+        </div>
+
+        <a class="left carousel-control" href="#theCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+
+        <a class="right carousel-control" href="#theCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

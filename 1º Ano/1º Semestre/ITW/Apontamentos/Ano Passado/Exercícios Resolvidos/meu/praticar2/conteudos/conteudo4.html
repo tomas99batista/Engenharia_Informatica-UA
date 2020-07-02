@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>Introdução às Tecnologias Web</title>
+</head>
+<body>
+    <div class="head">
+        <h1>Introdução às Tecnologias Web</h1>
+    </div>
+    <div class="up_menu">
+        <a href="../index.html">Home</a> | 
+        <a href="../about.html">About Me</a> | 
+        <a href="../contact.html">Contact Me</a>
+    </div>
+    <div class="conteudo">
+        <br>
+        <br>
+        <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+            <fieldset>
+                <legend>Informação pessoal</legend>
+                <input type="hidden" name="FormName" value="UserForm" />
+                <input type="text" name="Firstname" placeholder="Digite o seu nome" value="Joaquim" /><br />
+                <input type="text" name="Lastname" placeholder="Digite o seu sobrenome" /><br />
+                <input type="password" name="Password" placeholder="Digite a sua palavra passe" /><br />
+            </fieldset>
+            <fieldset>
+                <legend>Comentários</legend>
+                <textarea name="Comments" rows="4" cols="80" placeholder="Insira os seus comentários" >
+                </textarea>
+                <br>
+                <input name="Button" type="Submit" />
+            </fieldset>
+        </form>
+    </div>
+    <div class="lateral">
+        <h3>Conteúdo:</h3>
+        <ul>
+        <li><a href="conteudo2.html">Listas e Dicionarios</a><br></li>
+        <li><a href="conteudo3.html">Xadrez</a><br></li>
+        <li><a href="conteudo4.html">Formulário 1</a><br></li>
+        <li><a href="conteudo5.html">Formulário 2</a><br></li>
+        <li><a href="conteudo6.html">Feedback</a><br></li>
+        </ul>
+        <h3>Informações:</h3>
+        <ul>
+        <li><a href="../info/info1.html">Informação 1</a><br></li>
+        <li><a href="../info/info2.html">Informação 2</a><br></li>
+        <li><a href="../info/info3.html">Informação 3</a><br></li>
+        <li><a href="../info/info4.html">Informação 4</a><br></li>
+        <li><a href="../info/info5.html">Informação 5</a><br></li>
+        <li><a href="../info/info6.html">Informação 6</a><br></li>
+        <li><a href="../info/info7.html">Informação 7</a><br></li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <hr>
+        Copyright &copy Introdução às Tecnologias Web 2016
+    </div>
+</body>
+</html>

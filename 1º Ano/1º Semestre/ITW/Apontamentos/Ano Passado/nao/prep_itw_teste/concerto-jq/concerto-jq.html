@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscrição num concerto - jQuery</title>
+    <meta charset="utf-8" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="page-header"><h2><i class="fa fa-music fa-2x"></i> In concert</h2></div>
+        <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName" placeholder="Name" name="Name">
+                    <div class="hidden bg-danger" id="inputNameError"><i class="fa fa-exclamation-triangle text-danger"></i> O nome deve ter entre 3 e 100 letras.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress" class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-10">
+                    <textarea rows="3" type="text" class="form-control" id="inputAddress" placeholder="Address" name="Address"></textarea>
+                    <div class="hidden bg-danger" id="inputAddressError"><i class="fa fa-exclamation-triangle text-danger"></i> A morada deve ter entre 20 e 200 letras.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="Email">
+                    <div class="hidden bg-danger" id="inputEmailError"><i class="fa fa-exclamation-triangle  text-danger"></i> O e-mail deve ter entre 10 e 100 letras e possuir o caracter @.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Place</label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="100" id="inputOption1" name="Option1">Relva - Frente (100€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="80" id="inputOption2" name="Option2">Relva - Trás (80€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="65" id="inputOption3" name="Option3">Bancada Central (65€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="50" id="inputOption4" name="Option4">Bancada Lateral (50€)</label>
+                    </div>
+                    <!--<div class="checkbox">
+                        <label><input type="checkbox" value="10" id="inputOption5" name="Option5">Porta (10€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="0" id="inputOption6" name="Option6">Lá fora (0€)</label>
+                    </div>-->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Max</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly="readonly" id="maxValue" name="maxValue" class="form-control-static" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary">Comprar!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../Scripts/jquery-3.1.1.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="concerto-jq.js"></script>
+</body>
+</html>

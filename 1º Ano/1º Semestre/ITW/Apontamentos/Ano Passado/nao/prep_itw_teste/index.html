@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1 id="clock"></h1>
+        <input type="text" id="name" />
+        <button>Click Me!</button>
+
+
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+        window.onload = function() {
+            var min = 5;
+            var sec = 0;
+            setInterval(function() {
+                $("#clock").text(min + " : " + sec);
+                if (sec == 0) {
+                    sec = 60;
+                    min--;
+                    if (min == -1) {
+                        min = 4;
+                    }
+                }
+                sec--;
+            },100);
+        }
+    </script>
+    <script>
+
+        $("document").ready(function () {
+            $("button").click(function () {
+                if ($("#name").val().trim().length < 10) {
+                    document.write("10!!!!!!!!!!!!!");
+                }
+                else {
+                    alert($("#name").val().trim().length);
+                }
+                $("body").css({'background-color':'blue','color':'red'});
+            });
+        });
+    </script>
+    
+    </body>
+</html>

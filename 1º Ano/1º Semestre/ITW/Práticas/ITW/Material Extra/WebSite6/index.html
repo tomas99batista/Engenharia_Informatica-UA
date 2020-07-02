@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <script>
+        function get_id(e) {
+           
+            if (e['movieID'] != null)
+                return "search.html?m="+e['movieID'];
+            if (e['directorID'] != null)
+                return "dsearch.html?d="+e['directorID'];
+            if (e['actorID'] != null)
+                return "asearch.html?a="+e['actorID'];
+           
+        }
+        function get_text(e) {
+            if (e['movie_title']!=null)
+                return e['movie_title'];
+            if (e['directorName']!=null)
+                return e['directorName'];
+            if (e['actorName']!=null)
+                return e['actorName'];
+        }
+    </script>
+    <style>
+        .container{
+
+        }
+        .content {
+
+            margin-top: 100px;
+            
+        }
+        #filmes{
+            background-image: url("kappa.jpg");
+            float:left;
+            margin-left: 20px;
+            margin-top: 50px;
+        }
+        .filme{
+           
+            
+           
+
+        }
+        i {
+            position: relative;
+            float: left;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Project name</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Movies</a></li>
+                    <li><a href="index.html?d">Directors</a></li>
+                    <li><a href="index.html?a">Actors</a></li>
+                    
+                   
+                </ul>
+            </div>
+
+
+
+        </div>
+    </nav>
+
+    <div class="row content">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container">
+                <div class="input-group stylish-input-group">
+                    <input id="search" type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="filmes" data-bind="foreach: filmes">
+            <div class="col-xs-3">
+                <i class='fa fa-film' aria-hidden='true'></i>
+               
+                <a class="filme" data-bind="attr: {'href': get_id($data)},text: get_text($data)"></a><!-- This is so i dont make 3 pages...-->
+              
+            </div>
+        </div>
+    </div>
+   
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/knockout-3.4.0.js"></script>
+    <script src="load.js"></script>
+    <script src="s_bar.js"></script>
+
+</body>
+</html>

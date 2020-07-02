@@ -1,0 +1,32 @@
+.left {
+    background-color: black;
+    color: white;
+    font-size: 14pt;
+    font-family: calibri;
+    height: 450px;
+    width: 570px;
+    float: left;
+}
+
+
+.right {
+    background-color: blue;
+    color: white;
+    font-size: 14pt;
+    font-family: calibri;
+    height: 450px;
+    width: 350px;
+    float: left;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.footer {
+    background-color: #c4c509;
+    font-family: calibri;
+    font-size: 12pt;
+    height: 70px;
+    width: 960px;
+    margin-top: 20px;
+    padding-top: 15px;
+}

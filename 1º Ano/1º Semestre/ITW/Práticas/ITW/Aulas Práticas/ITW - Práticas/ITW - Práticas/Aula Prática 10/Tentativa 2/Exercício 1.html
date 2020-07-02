@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../Content/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="page-header"><h2> knockOut conference - Participants</h2></div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-xs-4">Name</th>
+                    <th class="col-xs-3">Email</th>
+                    <th class="col-xs-2">Birth Date</th>
+                    <th class="col-xs-2">Sex</th>
+                    <th class="col-xs-1"></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: participants">
+                <tr>
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: email"></td>
+                    <td data-bind="text: birthDate"></td>
+                    <td data-bind="text: sex"></td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editParticipantModal" data-bind="click: $root.readOneParticipant"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        <button style="float:right;" type="button" class="btn btn-danger" data-bind="click: $root.deleteOne"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="float:right;">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#createParticipantModal"><i class="fa fa-user-o" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-default" data-bind="click: readParticipants"><i class="fa fa-folder-open-o" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-default" data-bind="click: deleteAll"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="createParticipantModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: aliceblue;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Crete Participant</h4>
+                </div>
+                <div class="modal-body form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="name">Name:</label>
+                        <div class="col-xs-10"><input data-bind="textInput: name" type="text" class="form-control" id="name" value="" placeholder="Name" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="email">Email:</label>
+                        <div class="col-xs-10"><input data-bind="textInput: email" type="email" class="form-control" id="email" value="" placeholder="Email" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="address">Address:</label>
+                        <div class="col-xs-10"><textarea data-bind="textInput: address" type="text" rows="5" class="form-control" id="address" value="" placeholder="Address"></textarea></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="birthDate">Birth Date:</label>
+                        <div class="col-xs-10"><input data-bind="textInput: birthDate" type="text" class="form-control" id="birthDate" value="" placeholder="Birth Date" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="sex">Sex:</label>
+                        <div class="col-xs-10" id="sex">
+                            <label class="radio-inline"><input data-bind="checked: sex"  type="radio" value="Male" name="sex" />Male</label>
+                            <label class="radio-inline"><input data-bind="checked: sex"  type="radio" value="Female" name="sex" />Female</label>
+                            <label class="radio-inline"><input data-bind="checked: sex"  type="radio" value="Other" name="sex" />Other</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" for="course">Course:</label>
+                        <div class="col-xs-10">
+                            <select class="form-control" id="course" data-bind="selectedOptions: course">
+                                <option disabled selected>Pick One</option>
+                                <option value="ECT">Engenharia de Computadores e Telemática</option>
+                                <option value="EET">Engenharia Eletrónica e Telecomunicações</option>
+                                <option value="LEI">Engenharia Informática</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click: addOne">Create</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="editParticipantModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: aliceblue;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Participant</h4>
+                </div>
+                <div class="modal-body form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="name">Name:</label>
+                        <div class="col-xs-10"><input data-bind="textInput: name2" type="text" class="form-control" id="name" value="" placeholder="Name" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="email">Email:</label>
+                        <div class="col-xs-10"><input data-bind="textInput: email2" type="email" class="form-control" id="email" value="" placeholder="Email" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="address">Address:</label>
+                        <div class="col-xs-10"><textarea data-bind="textInput: address2" type="text" rows="5" class="form-control" id="address" value="" placeholder="Address"></textarea></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="birthDate">Birth Date:</label>
+                        <div class="col-xs-10"><input data-bind="textInput: birthDate2" type="text" class="form-control" id="birthDate" value="" placeholder="Birth Date" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="sex">Sex:</label>
+                        <div class="col-xs-10" id="sex">
+                            <label class="radio-inline"><input data-bind="checked: sex2" type="radio" value="Male" name="sex" />Male</label>
+                            <label class="radio-inline"><input data-bind="checked: sex2" type="radio" value="Female" name="sex" />Female</label>
+                            <label class="radio-inline"><input data-bind="checked: sex2" type="radio" value="Other" name="sex" />Other</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" for="course">Course:</label>
+                        <div class="col-xs-10">
+                            <select class="form-control" id="course" data-bind="selectedOptions: course2">
+                                <option disabled selected>Pick One</option>
+                                <option value="ECT">Engenharia de Computadores e Telemática</option>
+                                <option value="EET">Engenharia Eletrónica e Telecomunicações</option>
+                                <option value="LEI">Engenharia Informática</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Edit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../../../Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="../../../Scripts/bootstrap.min.js"></script>
+    <script src="../../../Scripts/knockout-3.4.2.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

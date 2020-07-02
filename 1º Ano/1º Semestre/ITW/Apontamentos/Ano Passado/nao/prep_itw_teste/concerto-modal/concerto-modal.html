@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscrição num concerto - jQuery+Modal</title>
+    <meta charset="utf-8" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="page-header"><h2><i class="fa fa-music fa-2x"></i> In concert</h2></div>
+        <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName" placeholder="Name" name="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress" class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-10">
+                    <textarea rows="3" type="text" class="form-control" id="inputAddress" placeholder="Address" name="Address"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Place</label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="100" id="inputOption1" name="Option1">Relva - Frente (100€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="80" id="inputOption2" name="Option2">Relva - Trás (80€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="65" id="inputOption3" name="Option3">Bancada Central (65€)</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="50" id="inputOption4" name="Option4">Bancada Lateral (50€)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Max</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly="readonly" id="maxValue" name="maxValue" class="form-control-static" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary">Comprar!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Modal que vai ser usada apenas para apresentar erros -->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-danger">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><i class="fa fa-exclamation-triangle"></i> Erros no formulário</h4>
+                </div>
+                <div class="modal-body">
+                    <ul></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="concerto-modal.js"></script>
+</body>
+</html>

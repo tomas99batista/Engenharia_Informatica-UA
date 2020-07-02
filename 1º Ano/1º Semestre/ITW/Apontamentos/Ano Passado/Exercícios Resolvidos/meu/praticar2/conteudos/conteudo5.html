@@ -1,0 +1,91 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        .box {width:50%; float:left;}
+    </style>
+    <title>Introdução às Tecnologias Web</title>
+</head>
+<body>
+    <div class="head">
+        <h1>Introdução às Tecnologias Web</h1>
+    </div>
+    <div class="up_menu">
+        <a href="../index.html">Home</a> | 
+        <a href="../about.html">About Me</a> | 
+        <a href="../contact.html">Contact Me</a>
+    </div>
+    <div class="conteudo">
+        <br>
+        <form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+            <fieldset>
+                <legend>Informação pessoal</legend>
+                <label for="curso">Curso</label>
+                <select id="curso" name="Curso">
+                        <option value="1">Mestrado integrado em Engenharia de Computadores e Telemática</option>
+                        <option value="2">Mestrado integrado em Engenhari Eletrónica e Telecomunicações</option>
+                        <option value="3" selected="selected">Licenciatura em Engenharia Informática</option>
+                </select><br /><br />
+                <label for="firstnome">First Name:</label>
+                <input type="text" id="firstnome" name="Firstname" placeholder="Digite o seu nome" value="Joaquim" /><br /><br />
+                <label for="lastnome">Last Name:</label>
+                <input type="text" id="lastnome" name="Lastname" placeholder="Digite o seu sobrenome" /><br /><br />
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="Password" placeholder="Digite a sua palavra passe" /><br /><br />
+            </fieldset><br />
+            <fieldset>
+	        <label for="comments"></label>
+                <legend>Comments</legend>
+                <textarea id="comments" name="Comments" rows="4" cols="80" placeholder="Insira os seus comentários" >
+                </textarea>
+            </fieldset><br />
+            <fieldset>
+                <div class="box">
+	            <label for="trans"></label>
+                <legend>Meios de Transporte</legend>
+                <input type="checkbox" id="trans" name="vehicle" value="Bicicleta">Bicicleta<br />
+                <input type="checkbox" id="trans" name="vehicle" value="Carro">Carro<br />
+                <input type="checkbox" id="trans" name="vehicle" value="Comboio">Comboio<br />        
+                </div>
+                <div class="box">
+	            <label for="cor"></label>
+                <legend>Cor preferida</legend>
+                <input type="radio" id="cor" name="color" value="Azul">Azul<br />
+                <input type="radio" id="cor" name="color" value="Verde">Verde<br />
+                <input type="radio" id="cor" name="color" value="Vermelho">Vermelho<br />
+                <input type="radio" id="cor" name="color" value="Outra">Outra<br />
+                </div>
+            </fieldset><br />
+	        <label for="submit"></label>
+            <input id="submit" name="Button" type="Submit" />
+        </form>
+    </div>
+    <div class="lateral">
+        <h3>Conteúdo:</h3>
+        <ul>
+        <li><a href="conteudo2.html">Listas e Dicionarios</a><br></li>
+        <li><a href="conteudo3.html">Xadrez</a><br></li>
+        <li><a href="conteudo4.html">Formulário 1</a><br></li>
+        <li><a href="conteudo5.html">Formulário 2</a><br></li>
+        <li><a href="conteudo6.html">Feedback</a><br></li>
+        </ul>
+        <h3>Informações:</h3>
+        <ul>
+        <li><a href="../info/info1.html">Informação 1</a><br></li>
+        <li><a href="../info/info2.html">Informação 2</a><br></li>
+        <li><a href="../info/info3.html">Informação 3</a><br></li>
+        <li><a href="../info/info4.html">Informação 4</a><br></li>
+        <li><a href="../info/info5.html">Informação 5</a><br></li>
+        <li><a href="../info/info6.html">Informação 6</a><br></li>
+        <li><a href="../info/info7.html">Informação 7</a><br></li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <hr>
+        Copyright &copy Introdução às Tecnologias Web 2016
+    </div>
+</body>
+</html>

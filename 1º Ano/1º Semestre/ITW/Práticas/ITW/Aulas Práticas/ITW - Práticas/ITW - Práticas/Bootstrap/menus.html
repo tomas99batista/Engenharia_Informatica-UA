@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstraptrial</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <ul class="list-inline">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Contact
+                    <span class="caret"></span>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Phone</a></li>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Schedule an App</a></li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div style="height: 100px"></div>
+
+    <div class="container">
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="#">About</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Contact<span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Encontro</a></li>
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="container">
+        <ul class="nav nav-pills">
+
+            <li class="active"><a href="#superman">Superman</a></li>
+            <li><a href="#batman">Batman</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle"
+                   data-toggle="dropdown" href="#">
+                    Flash<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="disabled"><a href="#flash">The Flash</a></li>
+                    <li><a data-toggle="tab" href="#kidflash">Kid Flash</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <div class="tab-content">
+            <div id="superman" class="tab-pane fade in active">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius tincidunt libero sed vulputate. Curabitur sapien arcu, faucibus eget faucibus sed, rhoncus id lacus.
+            </div>
+            <div id="batman" class="tab-pane fade">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius tincidunt libero sed vulputate. Curabitur sapien arcu, faucibus eget faucibus sed, rhoncus id lacus.
+            </div>
+            <div id="flash" class="tab-pane fade">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius tincidunt libero sed vulputate. Curabitur sapien arcu, faucibus eget faucibus sed, rhoncus id lacus.
+            </div>
+            <div id="kidflash" class="tab-pane fade">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius tincidunt libero sed vulputate. Curabitur sapien arcu, faucibus eget faucibus sed, rhoncus id lacus.
+            </div>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

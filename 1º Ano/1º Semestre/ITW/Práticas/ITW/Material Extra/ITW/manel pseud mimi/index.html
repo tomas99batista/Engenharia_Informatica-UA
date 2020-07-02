@@ -1,0 +1,229 @@
+<!-- Trabalho realizado por Manuel Cura Marcos Nº: 76546 ; Paulo Seixas Nº: 76724 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Autores</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Once upon a time...</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Autores</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Projeto final!</div>
+                <div class="intro-heading">ITW</div>
+                <a href="#services" class="page-scroll btn btn-xl">Autores</a>
+            </div>
+        </div>
+    </header>
+<section id="services">
+    <center><h2>Lista de autores!</h2></center>
+    <div>
+        <center>
+        <select onchange="select()" id="dat">
+        <option text="" value=""></option>
+        </select>
+        </center>
+    </div>
+<div>
+<nav>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a data-toggle="tab" href="#tab-1">Livros</a></li>
+  <li role="presentation"><a data-toggle="tab" href="#tab-2">Vendas</a></li>
+</ul>
+</nav>
+</div>
+ <div id="tabcontent" class="tab-content" style="min-height: 400px;">
+    <div class="tab-pane fade in active" id="tab-1">     
+    </div>
+    <div class="tab-pane fade" id="tab-2">      
+    </div>
+</div>
+</section>
+<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    var xmlhttp = new XMLHttpRequest();
+    var myUrl = "http://192.168.160.36/JSON/getAuthors.aspx";   
+    $.ajax({
+    type: "GET",
+    url: myUrl,
+    data: { numAuthors: 23 },
+    dataType: "jsonp",
+    success: menuselect,
+    error: function (xhr, status, err) {
+    }
+    });
+    xmlhttp.onreadystatechange = function pedidohttp(){
+    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        var autor = JSON.parse(xmlhttp.responseText);
+        menuselect(autor);
+    }
+    }
+    xmlhttp.open("GET",myUrl,true);
+    xmlhttp.send();
+
+    
+
+    function menuselect(autor){
+        var autorSelect = document.getElementById("dat");
+        for (var i = 0; i < autor.length; i++) {
+            var option = document.createElement("option");
+            option.text = autor[i].name;
+            option.value = autor[i].ID;
+            autorSelect.add(option);
+        }
+    }
+    
+    function titulo_livros(titulo){
+        if (titulo==""){
+            document.getElementById("tab-1").innerHTML="Não existem informações acerca deste(a) autor(a)."
+        }
+        else{
+        var out = "<table class=\"table table-striped table-bordered\"><tr><th>Titulo</th>" +
+                "<th>Estilo</th><th>Preço</th><th>Vendas do Ano</th>" +
+                "<th>Notas</th><th>Data de Publicação</th></tr>";
+        var i;
+        for(i = 0; i < titulo.length; i++){
+            out += "<tr><td>" + titulo[i].title + "</td><td>"+titulo[i].type + "</td><td>" + titulo[i].price + "</td><td>" + titulo[i].ytd_sales + "</td><td>" + titulo[i].notes + "</td><td>" + titulo[i].pubdate + "</td></tr>";
+        }
+        out+="</table>";
+        document.getElementById("tab-1").innerHTML=out;}
+    }
+
+    function vendas_livros(vendas){
+        if (vendas==""){
+            document.getElementById("tab-2").innerHTML="Não existem informações acerca deste(a) autor(a)."
+        }
+        else{
+        var out = "<table class=\"table table-striped table-bordered table-condensed\"><tr><th>Titulo</th><th>Vendas</th></tr>"
+        var i;
+        for (i=0; i<vendas.length; i++) {
+            out += "<tr><td>" + vendas[i].title + "</td><td>" + "<table class=\"table table-striped table-bordered table-condensed\"><tr><th>Nº Encomenda</th><th>Data Encomenda</th><th>Quantidade</th><th>Métodos de Pagamento</th><th>Loja</th></tr>";
+            for (var j = 0; j < vendas[i].sales.length; j++){
+                out+="<tr><td>" + vendas[i]['sales'][j].orderNum+"</td>"+"<td>"+vendas[i]['sales'][j].orderDate+"</td>" + "<td>" + vendas[i]['sales'][j].quantity + "</td>" + "<td>" + vendas[i]['sales'][j].payTerms + "</td>" + "<td>" + vendas[i]['sales'][j]['store'].name + "<br>" + vendas[i]['sales'][j]['store'].adress + "<br>" + vendas[i]['sales'][j]['store'].city + ", " + vendas[i]['sales'][j]['store'].state + ", " + vendas[i]['sales'][j]['store'].zip + "</td>" + "</tr>"; 
+            }
+            out+="</table></td></tr>";
+        }
+        out+="</table>";
+        document.getElementById("tab-2").innerHTML=out}
+    }
+
+    function buscar_autor(autor){
+        var xmlhttp = new XMLHttpRequest();
+        var myUrl = "http://192.168.160.36/JSON/getAuthorTitles.aspx?author_ID="+autor;   
+        $.ajax({
+        type: "GET",
+        url: myUrl,
+        data: { numAuthors: 23 },
+        dataType: "jsonp",
+        success: titulo_livros,
+        error: function (xhr, status, err) {
+        }
+        });
+    }
+
+    function buscar_vendas(autor){
+        var xmlhttp = new XMLHttpRequest();
+        var myUrl = "http://192.168.160.36/JSON/getAuthorSales.aspx?author_ID="+autor;
+        $.ajax({
+        type: "GET",
+        url: myUrl,
+        dataType: "jsonp",
+        success:vendas_livros,
+        error: function (xhr, status, err) {     
+        }
+        });
+    }
+
+    function select(){
+        var elemento = event.target;
+        var elementoSeleccionado = elemento.options[elemento.selectedIndex];
+            autor = elementoSeleccionado.value;
+            buscar_vendas(autor)
+            buscar_autor(autor)
+    }
+
+    
+
+    
+    </script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>

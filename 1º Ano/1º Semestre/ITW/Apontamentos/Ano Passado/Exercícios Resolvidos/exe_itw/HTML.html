@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <!--<link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/font-awesome.css" rel="stylesheet" />-->
+        <style>
+            #content
+            {
+                margin: 0 0 0 30%;
+                padding: 2% 2% 2% 2%;
+                background-color:grey;
+                height:100px;
+                width:500px;
+                overflow:hidden;
+                position:relative;
+                border-radius: 5px;
+                
+            }
+            #scrollingcontent
+            {
+                margin: 1% 2% 2% 2%;
+                position:absolute;
+                left:0px;
+                top:100px;
+                width:100%;
+                
+            }
+        
+        </style>
+    </head>
+    <body>
+	<br>
+	<br>
+	<br>
+        <div id="output"></div>
+        <div id="content" onmouseover="scrollspeed(0)" onmouseout="scrollspeed(10)">
+            <div id="scrollingcontent"></div>
+        </div>
+        
+        
+        
+        
+        <script>
+            var scrollspeedx = 10;
+            var output = document.getElementById("output");
+            var output2 = document.getElementById("scrollingcontent");
+            var countval = 0
+            var contentheight = 100;
+            
+            window.onload = setupscroll;
+            
+            var content = "<h1>Hello World</h1>this is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum in sem at maximus. Nulla facilisi. Aliquam nec tincidunt risus. Praesent a vulputate est. Proin convallis purus quis sem vehicula, in cursus justo gravida. Fusce quis porta purus. Phasellus eget cursus neque, et efficitur mauris. Morbi pellentesque eros eget pulvinar euismod. Vivamus leo felis, feugiat tempor leo in, semper semper nibh. Aliquam id mauris ornare, dictum nisi eget, tincidunt metus. Aliquam molestie placerat venenatis. Praesent ut dui purus. Quisque vel porta dui, at eleifend nisl. Donec elit massa, rutrum in tellus sed, mattis ultrices magna.";
+            
+            function setupscroll()
+            {
+                output2.style.top = contentheight + "px";
+                output2.innerHTML = content;
+                scrollinterval = setInterval("scrollingcontent()", 50);
+                
+                
+            }
+            
+            function scrollingcontent()
+            {
+                countval ++;
+                console.log(parseInt(output2.style.top))
+                if (parseInt(output2.style.top) + output2.clientHeight > 0)
+                    {
+                        output2.style.top = parseInt(output2.style.top) - scrollspeedx + "px";
+                    }
+                else
+                    {
+                       output2.style.top = contentheight + "px";  
+                    }
+                  
+            }
+            function scrollspeed(ss)
+            {
+                scrollspeedx = ss;
+                console.log(ss);
+            }
+            
+        
+        </script>
+       <!-- <script src="Scripts/jquery-3.1.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>-->
+    </body>
+</html>

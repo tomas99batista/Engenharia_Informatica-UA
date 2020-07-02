@@ -1,0 +1,75 @@
+.corpo 
+    {
+      margin: auto;
+      font-family: 'Open Sans';
+      font-weight: 300; 
+    }
+
+.topo 
+    {
+        background-color: black;
+        color: yellow; 
+        text-align: center; 
+        padding: 1% 0 1% 0; 
+    }
+
+.user 
+    {
+        background-color: black; 
+        float: left;
+        text-align: center;
+        color: white; 
+        font-weight:bold;
+        height: 30px;
+        width: 10%;
+    }
+
+.pass
+    {
+        background-color: black;
+        float: left;
+        text-align: center; 
+        color: white; 
+        font-weight:bold;
+        height: 30px; 
+        width: 10%;
+    }
+
+.pass_input
+    {
+        width: 15%;
+    }
+
+.lateral
+    {
+        clear: both; 
+        background-color: black;
+        text-align: center; 
+        color: white; 
+        float: left; 
+        font-weight: bold;
+        margin: 0.5% 0 0 0;
+        height: 224px;
+        width: 10%; 
+    }
+
+.um
+    {
+        margin: 0.5% 0.25% 0.25% 0.5%;
+        background-color: lightgrey;
+        float: left;
+        width: 42%;
+    }
+
+.text
+    {
+        width: 55%;
+    }
+
+#submit
+    {
+        position: absolute;
+        top: 72%;
+        left: 47%;
+    }
+    

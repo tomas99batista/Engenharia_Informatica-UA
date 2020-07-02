@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <!--<link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/font-awesome.css" rel="stylesheet" />-->
+    </head>
+    <body>
+	<h3>Input Radius value and get the volume of a sphere!</h3>
+      	<label for id="radiuss">Radius:</label>
+      	<br />
+      	<input type="text" id="radius"/>
+      	<br />
+      	<br />
+      	<label for id="volumes">Volume:</label>
+      	<br />
+      	<input type="text" id="volume" value="000.0000" />
+      	<br />
+      	<input type="submit" onclick="calculate()" value="Calculate" />
+
+
+	<script>
+	  function ok(){alert("ok");}
+	  function calculate()
+	  {
+	  	var radius = document.getElementById("radius").value;
+	  	var res = document.getElementById("volume");
+	  	res.value = ((4/3) * Math.PI * (Math.pow(radius, 3))).toFixed(4);
+
+
+	  }
+
+	</script>
+        <!--<script src="Scripts/jquery-3.1.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>-->
+    </body>
+</html>

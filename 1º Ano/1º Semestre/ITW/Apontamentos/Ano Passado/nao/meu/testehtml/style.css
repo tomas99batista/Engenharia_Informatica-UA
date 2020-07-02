@@ -1,0 +1,43 @@
+.corpo
+    {
+        margin: auto;
+    }
+
+.topo
+    {
+        min-height: 100px;
+        background-image: url('http://www.colegioweb.com.br/wp-content/uploads/2016/10/Latin-768x396.jpg');
+        background-repeat: no-repeat;
+        align-content: center;
+    }
+
+.lateral
+    {
+        text-align: center;
+        padding: 2% 0 0 0;
+        margin: 0.5% 0 0 0;
+        float: left;
+        width: 16%;
+        min-height: 423px;
+        background-color: lightblue;
+    }
+
+.conteudos
+    {
+        margin: 0.5% 0 0 0;
+        float: left;
+        width: 84%;
+        min-height: 450px;
+        background-color: lightgrey;
+        
+    }
+
+.footer
+    {
+        clear: both;
+        font-size: 12px;
+        padding: 0 -2% 0 2%;
+        margin: 0 0 0 0%;
+        width: 100%;
+        background-color: lightgreen;
+    }

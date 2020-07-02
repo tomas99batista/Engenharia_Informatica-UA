@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="../Scripts/jquery-ui-1.12.1.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+        <style>
+            #draggable {
+                width: 400px;
+            height: 400px;
+            padding: 0.5em;
+        }
+
+    </style>
+</head >
+            <body>
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="Home.html">*bolinha*</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="Countries.html">Countries</a></li>
+                            <li><a href="Leagues.html">Leagues</a></li>
+                            <li class="active"><a href="Teams.html">Teams</a></li>
+                            <li><a href="Players.html">Players</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container">
+                    <!-- ko foreach: teams -->
+        <div class="page-header"><img id="imagem" src="" /><h3><span id="variavel" data-bind="text: team_long_name"></span></h3></div>
+                    <!-- /ko -->
+    </div>
+
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                        <!-- ko foreach: seasons-->
+             <li><a data-toggle="tab" data-bind="text:$data" href="#ITSYABOY" onclick="getTeamDetails(), changeKits()"></a></li>
+                        <!-- /ko -->
+             </ul>
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <h3>Seasons</h3>
+                            <p>Select a tab of a season for details on the team's composition and matches for that same season</p>
+                            <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
+                            
+
+                        </div>
+
+
+
+                        <div id="ITSYABOY" class="tab-pane fade">
+
+                            <!--ko with: seasonDetailsL-->
+                            <h3>Season Details of <span data-bind="text: $data"></span></h3>
+                            <!-- /ko -->
+
+     
+                                    <div class="container col-lg-8"><h4 style="text-align:center">Matches</h4>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align:right">Home</th>
+                                                    <th style="text-align:center">Result</th>
+                                                    <th style="text-align:left">Visiting</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--ko foreach: seasonDetailsM-->
+                                                <tr>
+                                                    <td style="text-align:right" data-bind="text:home_team.team_long_name"></td>
+                                                    <td style="text-align:center"><span data-bind="html:home_team_goal"></span> - <span data-bind="html:away_team_goal"></span></td>
+                                                    <td data-bind="text:away_team.team_long_name"></td>
+                                                    <td><a data-bind="attr:{ href: 'matches.html#matches/' + id }">Details</a></td>
+                                                </tr>
+                                                <!--/ko-->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <div class="container col-lg-4">
+                                    <h4 style="text-align:center">Statistics</h4>
+                                    <br />
+
+                                  <!--ko foreach: seasonDetailsA -->
+                                    <div style="text-align:right" class="col-lg-6">Speed:</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: buildupplayspeed"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Dribbling:</div><div class="col-lg-6"> <span style="text-align:left" id="dribblingID" data-bind="html: buildupplaydribbling"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Passing:</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: buildupplaypassing"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Creating passing(%):</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: chancecreationpassing"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Creating crossing(%):</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: chancecreationcrossing"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Creating shooting(%):</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: chancecreationshooting"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Defence pressure:</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: defencepressure"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Defence aggression:</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: defenceaggression"></span></div>
+                                    <div style="text-align:right" class="col-lg-6">Field coverage (defence):</div><div class="col-lg-6"> <span style="text-align:left" data-bind="html: defenceteamwidth"></span></div>
+
+                                  <!--/ko-->
+                           
+                                </div>
+
+                            <div class="container">
+                                <div><img id="homeKit" src="" onerror="this.src = '/fallback/default kit.png';"/></div>
+                                <div><img id="awayKit" src="" onerror="this.src = '/fallback/default kit.png';"/></div>
+                                <div><img id="GKKit" src="" onerror="this.src = '/fallback/default kit.png';"/></div>
+                                <div><img id="thirdKit" src="" onerror="this.src = '/fallback/default kit.png';"/></div>
+
+                            </div>
+
+                            </div>
+
+                      
+
+                        </div>
+
+                    </div>
+
+                
+
+                <script>
+                    var vm = function () {
+                        console.log('ViewModel initiated...')
+            //---Variáveis locais
+                        var self = this;
+                        
+                    var teamId = window.location.hash.substr(1);
+                    var sofifaId = location.href.split('?')[1];
+                    console.log(teamId);
+                    var baseSrc = "https://cdn.sofifa.org/18/teams/" +sofifaId+ ".png"
+                    document.getElementById("imagem").src = baseSrc
+            var baseUri = 'http://192.168.160.28/football/api/teams/' + teamId;
+            var seasonUri = 'http://192.168.160.28/football/api/seasons'
+            self.teams = ko.observableArray([]);
+            self.error = ko.observable();
+            self.seasons = ko.observableArray([]);
+            self.seasonDetailsA = ko.observableArray([]);
+            self.seasonDetailsM = ko.observableArray([]);
+            self.seasonDetailsL = ko.observable();
+                        self.var1 = ko.observableArray([])
+
+            //--- Internal functions
+            function ajaxHelper(uri, method, data) {
+                        self.error(''); // Clear error message
+                    return $.ajax({
+                        type: method,
+                    url: uri,
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: data ? JSON.stringify(data) : null,
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("AJAX Call[" + uri + "] Fail...");
+                    self.error(errorThrown);
+                    }
+                })
+            }
+
+           $(document).ready(function () {
+                        ajaxHelper(baseUri, 'GET').done(function (data) {
+                            self.teams(data)
+
+                        })
+                    })
+                    
+
+                        changeKits = function () {
+                            var sofifaId = location.href.split('?')[1];
+                            console.log(sofifaId);                          
+                            var seasonSelected = event.target.innerHTML;
+                            console.log(seasonSelected);
+ 
+                            var homeSrc = 'https://cdn.sofifa.org/' + 16 + '/kits/' + sofifaId + '/0_0.png';
+                            var awaySrc = 'https://cdn.sofifa.org/' + 16 + '/kits/' + sofifaId + '/1_0.png';
+                            var thirdSrc = 'https://cdn.sofifa.org/' + 16 + '/kits/' + sofifaId + '/3_0.png';
+                            var GKSrc = 'https://cdn.sofifa.org/' + 16 + '/kits/' + sofifaId + '/2_0.png';
+                            document.getElementById("homeKit").src = homeSrc
+                            document.getElementById("awayKit").src = awaySrc
+                            document.getElementById("thirdKit").src = thirdSrc
+                            document.getElementById("GKKit").src = GKSrc
+                        }
+
+           $(document).ready(function () {
+                        ajaxHelper(seasonUri, 'GET').done(function (data) {
+                            self.seasons(data)
+                        })
+                    })
+
+           getTeamDetails = function () {
+                        console.log("getTeamDetails CALL...");
+                    var seasonsUri = 'http://192.168.160.28/football/api/teams/seasons/' + teamId;
+               var seasonSelected = event.target.innerHTML;
+               console.log(seasonSelected);
+                    ajaxHelper(seasonsUri, 'GET').done(function (data) {
+                        self.var1(data[0].Attributes.buildupplayspeed);
+                   switch (seasonSelected) {
+                       case ("2015/2016") :
+                           self.seasonDetailsA(data[0].Attributes);
+                           self.seasonDetailsM(data[0].Matches);
+                           self.seasonDetailsL(data[0].Label);
+                           break
+                       case ("2014/2015"):
+                           self.seasonDetailsA(data[1].Attributes);
+                           self.seasonDetailsM(data[1].Matches);
+                           self.seasonDetailsL(data[1].Label);
+                           break
+                       case ("2013/2014"):
+                           self.seasonDetailsA(data[2].Attributes);
+                           self.seasonDetailsM(data[2].Matches);
+                           self.seasonDetailsL(data[2].Label);
+                           break
+                       case ("2012/2013"):
+                           self.seasonDetailsA(data[3].Attributes);
+                           self.seasonDetailsM(data[3].Matches);
+                           self.seasonDetailsL(data[3].Label);
+                           break
+                       case ("2011/2012"):
+                           self.seasonDetailsA(data[4].Attributes);
+                           self.seasonDetailsM(data[4].Matches);
+                           self.seasonDetailsL(data[4].Label);
+                           break
+                       case ("2010/2011"):
+                           self.seasonDetailsA(data[5].Attributes);
+                           self.seasonDetailsM(data[5].Matches);
+                           self.seasonDetailsL(data[5].Label);
+                           break
+                       case ("2009/2010"):
+                           self.seasonDetailsA(data[6].Attributes);
+                           self.seasonDetailsM(data[6].Matches);
+                           self.seasonDetailsL(data[6].Label);
+                           break
+                       case ("2008/2009"):
+                           self.seasonDetailsA(data[7].Attributes);
+                           self.seasonDetailsM(data[7].Matches);
+                           self.seasonDetailsL(data[7].Label);
+                           break
+                   }
+                    })
+           }
+
+                    getTableData = function () {
+                        var seasonsUri = 'http://192.168.160.28/football/api/teams/seasons/' + teamId;
+                        ajaxHelper(seasonsUri, 'GET').done(function (data) {
+                            self.var1(data[0].Attributes);
+                        })
+                    }
+                        getTableData()
+
+
+                    google.charts.load('current', { 'packages': ['bar'] });
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Year', 'Sales', 'Expenses', 'Profit'],
+                            ['2014', self.var1[1], 400, 200],
+                            ['2015', 1170, 460, 250],
+                            ['2016', 660, 1120, 300],
+                            ['2017', 1030, 540, 350]
+                        ]);
+
+                        var options = {
+                            chart: {
+                                title: 'Company Performance',
+                                subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                            }
+                        };
+
+                        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+                        chart.draw(data, google.charts.Bar.convertOptions(options));
+                    }
+           }
+        
+
+            ko.applyBindings(new vm)
+
+
+    </script>
+
+</body>
+
+</html>

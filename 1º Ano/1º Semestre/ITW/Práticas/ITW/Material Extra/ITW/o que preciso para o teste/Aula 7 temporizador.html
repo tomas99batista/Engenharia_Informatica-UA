@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+	var min = 5
+	var seg = 00
+
+		function temp(){
+		crl = setInterval(function diminuir(){
+			if (seg == 0){
+				seg = 59
+				min-=1
+			}
+			else {
+				seg-=1
+			}
+			document.getElementById("temp").innerHTML = min+":"+seg
+			if (min == -1){
+				document.getElementById("temp").innerHTML = "Acabou o TEMPO!"
+				clearInterval(crl)
+			}
+		},1000)
+	}
+	window.onload = temp()
+	</script>
+</head>
+<body>
+	<h1><span id="temp"></span></h1>
+</body>
+</html>

@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Football: Matches</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/style.css" rel="stylesheet" />
+    <link href="CSS/simple-sidebar.css" rel="stylesheet" />
+    <link href="CSS/Footer-white.css" rel="stylesheet" />
+    <style>
+        .pos_1_1 {
+            top: 295px;
+            left: 200px;
+        }
+
+        .pos_3_1 {
+            top: 260px;
+            left: 396px;
+        }
+
+        .pos_3_2 {
+            top: 260px;
+            left: 365px;
+        }
+
+        .pos_3_3 {
+            top: 260px;
+            left: 298px;
+        }
+
+        .pos_3_4 {
+            top: 260px;
+            left: 255px;
+        }
+
+        .pos_3_5 {
+            top: 260px;
+            left: 200px;
+        }
+
+        .pos_3_6 {
+            top: 260px;
+            left: 145px;
+        }
+
+        .pos_3_7 {
+            top: 260px;
+            left: 102px;
+        }
+
+        .pos_3_8 {
+            top: 260px;
+            left: 35px;
+        }
+
+        .pos_3_9 {
+            top: 260px;
+            left: 4px;
+        }
+
+        .pos_5_3 {
+            top: 195px;
+            left: 298px;
+        }
+
+        .pos_5_4 {
+            top: 195px;
+            left: 255px;
+        }
+
+        .pos_5_5 {
+            top: 195px;
+            left: 200px;
+        }
+
+        .pos_5_6 {
+            top: 195px;
+            left: 145px;
+        }
+
+        .pos_5_7 {
+            top: 195px;
+            left: 102px;
+        }
+
+        .pos_6_3 {
+            top: 155px;
+            left: 298px;
+        }
+
+        .pos_6_4 {
+            top: 155px;
+            left: 255px;
+        }
+
+        .pos_6_5 {
+            top: 155px;
+            left: 200px;
+        }
+
+        .pos_6_6 {
+            top: 155px;
+            left: 145px;
+        }
+
+        .pos_6_7 {
+            top: 155px;
+            left: 102px;
+        }
+
+        .pos_7_1 {
+            top: 125px;
+            left: 396px;
+        }
+
+        .pos_7_2 {
+            top: 125px;
+            left: 365px;
+        }
+
+        .pos_7_3 {
+            top: 125px;
+            left: 298px;
+        }
+
+        .pos_7_4 {
+            top: 125px;
+            left: 255px;
+        }
+
+        .pos_7_5 {
+            top: 125px;
+            left: 200px;
+        }
+
+        .pos_7_6 {
+            top: 125px;
+            left: 145px;
+        }
+
+        .pos_7_7 {
+            top: 125px;
+            left: 102px;
+        }
+
+        .pos_7_8 {
+            top: 125px;
+            left: 35px;
+        }
+
+        .pos_7_9 {
+            top: 125px;
+            left: 4px;
+        }
+
+        .pos_8_1 {
+            top: 95px;
+            left: 396px;
+        }
+
+        .pos_8_2 {
+            top: 95px;
+            left: 365px;
+        }
+
+        .pos_8_3 {
+            top: 95px;
+            left: 298px;
+        }
+
+        .pos_8_4 {
+            top: 95px;
+            left: 255px;
+        }
+
+        .pos_8_5 {
+            top: 95px;
+            left: 200px;
+        }
+
+        .pos_8_6 {
+            top: 95px;
+            left: 145px;
+        }
+
+        .pos_8_7 {
+            top: 95px;
+            left: 102px;
+        }
+
+        .pos_8_8 {
+            top: 95px;
+            left: 35px;
+        }
+
+        .pos_8_9 {
+            top: 95px;
+            left: 4px;
+        }
+
+        .pos_9_4 {
+            top: 60px;
+            left: 255px;
+        }
+
+        .pos_9_5 {
+            top: 60px;
+            left: 200px;
+        }
+
+        .pos_9_6 {
+            top: 60px;
+            left: 145px;
+        }
+
+        .pos_10_3 {
+            top: 30px;
+            left: 298px;
+        }
+
+        .pos_10_4 {
+            top: 30px;
+            left: 255px;
+        }
+
+        .pos_10_5 {
+            top: 30px;
+            left: 200px;
+        }
+
+        .pos_10_6 {
+            top: 30px;
+            left: 145px;
+        }
+
+        .pos_10_7 {
+            top: 30px;
+            left: 102px;
+        }
+
+        .pos_11_4 {
+            top: 20px;
+            left: 255px;
+        }
+
+        .pos_11_5 {
+            top: 20px;
+            left: 200px;
+        }
+
+        .pos_11_6 {
+            top: 20px;
+            left: 145px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li role="presentation"><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true" style="margin-right:7%;"></i>Home</a></li>
+                <li role="presentation"><a href="Countries.html"><i class="fa fa-globe" aria-hidden="true" style="margin-right:8%;"></i>Countries</a></li>
+                <li role="presentation"><a href="leagues.html"><i class="fa fa-trophy" aria-hidden="true" style="margin-right:8%;"></i>Leagues</a></li>
+                <li role="presentation"><a href="teams.html"><i class="fa fa-users" aria-hidden="true" style="margin-right:5%;"></i>Teams</a></li>
+                <li role="presentation"><a href="players.html"><i class="fa fa-user" aria-hidden="true" style="margin-right:10%;"></i>Players</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content" style="width:100%;">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" style="border-radius: 30px;" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <div style="padding-top:3%;" class="navbar-brand">
+                            <a href="index.html"><h1><span><i class="fa fa-futbol-o" aria-hidden="true"></i></span> Football</h1></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid" data-bind="foreach:matches">
+
+                <div class="jumbotron" style="background-color:transparent">
+                    <div class="col-md-2"><img data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+home_team.team_fifa_api_id+'.png'}" /></div>
+                    <div class="col-md-3"><a data-bind="attr:{ href: 'teamDetails.html#'+home_team.id+'#'+home_team.team_fifa_api_id, title: name}"><h2 data-bind="text:home_team.team_long_name"></h2></a></div>
+                    <div class="col-md-1"><h2 data-bind="text:home_team_goal"></h2></div>
+                    <div class="col-md-1"><h2 style="text-align:end" data-bind="text:away_team_goal"></h2></div>
+                    <div class="col-md-3"><a data-bind="attr:{ href: 'teamDetails.html#'+away_team.id+'#'+away_team.team_fifa_api_id, title: name}" style="text-align:end"><h2 data-bind="text:away_team.team_long_name"></h2></a></div>
+                    <div class="col-md-2"><img data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+away_team.team_fifa_api_id+'.png'}" /></div>
+                </div>
+
+                <div class="col-md-6"><h3><b>Macth date:</b></h3></div>
+                <div class="col-md-6"> <h3 data-bind="text:date.split('T')[0]"></h3></div>
+                <div>
+                    <div class="col-lg-5">
+                        <div style="background-image:url('Images/field.png');text-align:center; background-repeat:no-repeat; height:380px; width:480px;position:relative; " data-bind="foreach:Home_player">
+                            <div>
+                                <span>
+                                    <img style="height:40px; position:absolute; " onerror="this.src='Images/player.png'" data-bind="attr:{src:'https://cdn.sofifa.org/18/players/'+player_fifa_api_id+'.png',  class:CSSClass, title:player_name}" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-offset-1 col-lg-5">
+                        <div style="background-image:url('Images/field.png'); height:380px; background-repeat:no-repeat; width:480px;  position:relative;" data-bind="foreach:Away_player">
+                            <a><img style="height:40px; position:absolute;" onerror="this.src='Images/player.png'" data-bind="attr:{src:'https://cdn.sofifa.org/18/players/'+player_fifa_api_id+'.png',  class:CSSClass}" /></a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer id="myFooter">
+                   
+                    <div class="footer-social">
+                        <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="JS/sideBar.js"></script>
+    <script src="JS/matches.js"></script>
+</body>
+</html>

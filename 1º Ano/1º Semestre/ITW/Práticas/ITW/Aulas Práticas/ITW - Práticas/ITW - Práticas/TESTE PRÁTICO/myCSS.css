@@ -1,0 +1,15 @@
+﻿/* TODO: escrever o código em falta aqui... */
+.jumbotron {
+    background-image: url(banner.jpg);
+    min-height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.no_error {
+    display: none;
+}
+
+.error {
+    display: inline-block;
+}

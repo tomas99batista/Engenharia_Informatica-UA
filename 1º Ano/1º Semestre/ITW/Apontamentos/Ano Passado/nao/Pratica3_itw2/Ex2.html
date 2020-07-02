@@ -1,0 +1,59 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  
+</head>
+<body>
+  <div class="corpo">
+      <div class="topo">
+          <h1>Boletim de Inscrição</h1>
+      </div>
+      <br />
+    <form action="http://192.168.160.36/FormEcho.aspx" method="POST">      
+      <div class="info">
+          <div class="user"><label for="name">Name</label></div>
+          <input type="text" class="text" name="name"><br />
+          <div class="user"><label for="login">Login</label></div>
+          <input type="text" class="text" name="login"><br />
+          <div class="pass"><label for="ass">Password</label></div>
+          <input class="pass_input" type="password" name="pass"><br />
+      </div>
+      <div class="lateral">
+          <label for="Disciplinas">Disciplinas</label><br />
+      </div>
+      <fieldset class="um">
+          <legend>1º semestre - Curriculares</legend>
+          <input type="checkbox" class="check" name="disciplinas_1_semestre" value="alga" />Álgebra Linear e Geometria Analítica<br />
+          <input type="checkbox" class="check" name="disciplinas_1_semestre" value="ef" />Elementos de Física<br />
+          <input type="checkbox" class="check" name="disciplinas_1_semestre" value="calc1" />Cálculo I<br />
+          <input type="checkbox" class="check" name="disciplinas_1_semestre" value="itw" />Introdução às Tecnologias Web<br />
+          <input type="checkbox" class="check" name="disciplinas_1_semestre" value="fp" />Fundamentos de Programação<br />
+      </fieldset>
+      <fieldset class="um">
+          <legend>2º semestre - Curriculares</legend>
+          <input type="checkbox" class="check" name="disciplina_2_semestre" value="mas" />Modelação e Análise de Sistemas<br />
+          <input type="checkbox" class="check" name="disciplina_2_semestre" value="calc2" />Cálculo II<br />
+          <input type="checkbox" class="check" name="disciplina_2_semestre" value="md" />Matemática Discreta<br />
+           <input type="checkbox" class="check" name="disciplina_2_semestre" value="iac" />Introdução à Arquitetura de Computadores<br />
+          <input type="checkbox" class="check" name="disciplina_2_semestre" value="poo" />Programação Orientada a Objetos<br />
+      </fieldset>
+      <fieldset class="um">
+          <legend>1º semestre - Opcionais</legend>
+          <input type="radio" name="opcao1" value="musica"/>Música
+          <input type="radio" name="opcao1" value="teatro"/>Teatro
+          <input type="radio" name="opcao1" value="cinema"/>Cinema
+          <input type="radio" name="opcao1" value="fotografia"/>Fotografia
+      </fieldset>
+      <fieldset class="um">
+          <legend>2º semestre - Opcionais</legend>
+          <input type="radio" name="opcao2" value="musica"/>Música
+          <input type="radio" name="opcao2" value="teatro"/>Teatro
+          <input type="radio" name="opcao2" value="cinema"/>Cinema
+          <input type="radio" name="opcao2" value="fotografia"/>Fotografia
+      </fieldset>
+      <input id="submit" type="submit" name="Button" value="Enviar"/>
+    </form>
+  </div>
+</body>
+<html>

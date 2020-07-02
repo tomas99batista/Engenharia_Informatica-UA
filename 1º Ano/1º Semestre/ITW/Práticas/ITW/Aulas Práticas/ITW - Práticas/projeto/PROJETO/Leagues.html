@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="../Scripts/jquery-3.2.1.slim.js"></script>
+    <script src="../Scripts/jquery-3.2.1.js"></script>
+    <link href="../Content/font-awesome.css" rel="stylesheet" />
+    <link href="mycss.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">*bolinha*</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="Countries.html">Countries</a></li>
+                <li class="active"><a href="Leagues.html">Leagues</a></li>
+                <li><a href="Teams.html">Teams</a></li>
+                <li><a href="Players.html">Players</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br />
+
+    <section>
+        <div class="container">
+            <div class="page-header">
+                <h2 data-bind="text:className"></h2>
+            </div>
+            </div>
+
+            <div class="container">
+                <table class="table table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Teams</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ko foreach: leagues -->
+                            <tr>
+                                <td><div><img  style="height: 40px; margin-right:2%;" data-bind=" attr: {src: 'logos/'+id+'.jpg'}"/><a data-bind="html:name, attr:{ href: 'LeagueDetails.html#leagues/'+id, title: name}"></a></div></td>
+                                <td>?????</td>
+                                <td><div><img style="height: 40px; margin-right:2%;" data-bind="attr:{ src: 'http://img.freeflagicons.com/thumb/square_icon/'+countryName.toLowerCase()+'/'+countryName.toLowerCase()+'_64.png'}" /></div></td>
+                            </tr>
+                            <!-- /ko -->
+                        </tbody>
+                    </table>
+
+                    <div class="clearfix"></div>
+                    <!-- ko if:error -->
+                    <div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+                    <!-- /ko -->
+                    <div class="bs-callout bs-callout-info" data-bind="html:description"></div>
+            </div>
+</section>
+
+    <script>
+        var vm = function () {
+            console.log('ViewModel initiated...')
+            //---Variáveis locais
+            var self = this;
+            var baseUri = 'http://192.168.160.28/football/api/leagues';
+            self.className = 'Leagues';
+            self.description = 'This page aims to demonstrate the use of the football web API for countries and the interconnection with other entities.<br>Called method(s): <ul><li>' + baseUri + '</li></ul>';
+            self.error = ko.observable();
+            self.leagues = ko.observableArray([]);
+            //--- Internal functions
+            function ajaxHelper(uri, method, data) {
+                self.error(''); // Clear error message
+                return $.ajax({
+                    type: method,
+                    url: uri,
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: data ? JSON.stringify(data) : null,
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("AJAX Call[" + uri + "] Fail...");
+                        self.error(errorThrown);
+                    }
+                })
+            }
+            //--- External functions (accessible outside)
+            getLeagues = function () {
+                console.log('CALL: getLeagues...')
+                ajaxHelper(baseUri, 'GET').done(function (data) {
+                    self.leagues(data);
+                });
+            };
+            //---- initial call
+            getLeagues();
+        };
+        ko.applyBindings(new vm)
+    </script>
+
+</body>
+</html>
