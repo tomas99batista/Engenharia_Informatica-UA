@@ -1,0 +1,125 @@
+﻿        <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Football</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/style.css" rel="stylesheet" />
+    <link href="CSS/simple-sidebar.css" rel="stylesheet" />
+    <link href="CSS/Footer-white.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li role="presentation"><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true" style="margin-right:7%;"></i>Home</a></li>
+                <li role="presentation"><a href="Countries.html"><i class="fa fa-globe" aria-hidden="true" style="margin-right:8%;"></i>Countries</a></li>
+                <li role="presentation"><a href="leagues.html"><i class="fa fa-trophy" aria-hidden="true" style="margin-right:8%;"></i>Leagues</a></li>
+                <li role="presentation"><a href="teams.html"><i class="fa fa-users" aria-hidden="true" style="margin-right:5%;"></i>Teams</a></li>
+                <li role="presentation"><a href="players.html"><i class="fa fa-user" aria-hidden="true" style="margin-right:10%;"></i>Players</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content" style="width:100%;">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" style="border-radius: 30px;" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <div style="padding-top:3%;" class="navbar-brand">
+                            <a href="index.html"><h1><span><i class="fa fa-futbol-o" aria-hidden="true"></i></span> Football</h1></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid" style="padding-left:0; padding-right:0;">
+                <div id="myCarousel" class="carousel slide" ; text-align:center;" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div style="height: 600px; background-image: url('Images/Carousel/2923819_big-lnd.jpg'); background-position: center center; background-repeat: no-repeat; background-size:cover;" class="item active">
+                            <div class="carousel-caption">
+                                <h1 style="font-size:xx-large;"><b>Countries</b></h1>
+                                <h3 style="margin-top:3%;">Choose the country that you want and start learning about it's football!</h3>
+                                <a href="Countries.html" style="margin-bottom:4%; margin-top:4%; background-color:#5bc0de; color:white" class="btn">Start right now!</a>
+                            </div>
+                        </div>
+                        <div style="height: 600px; background-image: url('Images/Carousel/Rooneys-Scissors-Kick.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;" class="item">
+                            <div class="carousel-caption">
+                                <h1 style="font-size:xx-large;"><b>Leagues</b></h1>
+                                <h3 style="margin-top:3%;">Choose a league and enjoy the show!</h3>
+                                <a href="leagues.html" style="margin-bottom:4%; margin-top:4%; background-color:#5bc0de; color:white" class="btn">Go straight to Leagues!</a>
+                            </div>
+                        </div>
+                        <div style="height: 600px; background-position: center center; background-repeat: no-repeat; background-size: cover; background-image: url('Images/Carousel/2923834_big-lnd.jpg'); " class="item">
+                            <div class="carousel-caption">
+                                <h1 style="font-size:xx-large;"><b>Teams</b></h1>
+                                <h3 style="margin-top:3%;">Choose a team and start learning about their players, odds, kits and much more!</h3>
+                                <a href="teams.html" style="margin-bottom:4%; margin-top:4%; background-color:#5bc0de; color:white" class="btn">Go ahead and learn it all!</a>
+                            </div>
+                        </div>
+                        <div style="height: 600px; background-position: center center; background-repeat: no-repeat; background-size: cover; background-image: url('http://cdn.sporting.digitaljump.xyz/sites/default/files/styles/large/public/multimedia/imagens/201712/scp_x_vilaverdense_2-1.jpg?itok=RN4Cshsv'); " class="item">
+                            <div class="carousel-caption">
+                                <h1 style="font-size:xx-large;"><b>Players</b></h1>
+                                <h3 style="margin-top:3%;">Choose a player and learn more about him!</h3>
+                                <a href="players.html" style="margin-bottom:4%; margin-top:4%; background-color:#5bc0de; color:white" class="btn">Go ahead and pick a player!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="myFooter">
+                         <div class="footer-social">
+                    <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="JS/sideBar.js"></script>
+</body>
+</html>

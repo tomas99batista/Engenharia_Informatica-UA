@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Football: Team Details</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/style.css" rel="stylesheet" />
+    <link href="CSS/simple-sidebar.css" rel="stylesheet" />
+    <link href="CSS/Footer-white.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li role="presentation"><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true" style="margin-right:7%;"></i>Home</a></li>
+                <li role="presentation"><a href="Countries.html"><i class="fa fa-globe" aria-hidden="true" style="margin-right:8%;"></i>Countries</a></li>
+                <li role="presentation"><a href="leagues.html"><i class="fa fa-trophy" aria-hidden="true" style="margin-right:8%;"></i>Leagues</a></li>
+                <li role="presentation"><a href="teams.html"><i class="fa fa-users" aria-hidden="true" style="margin-right:5%;"></i>Teams</a></li>
+                <li role="presentation"><a href="players.html"><i class="fa fa-user" aria-hidden="true" style="margin-right:10%;"></i>Players</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content" style="width:100%;">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" style="border-radius: 30px;" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <div style="padding-top:3%;" class="navbar-brand">
+                            <a href="index.html"><h1><span><i class="fa fa-futbol-o" aria-hidden="true"></i></span> Football</h1></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <div style="padding-left: 0; margin-top:0%;" class="page-header">
+                        <!-- ko foreach: team -->
+                        <img class="col-lg-2" data-bind="attr:{src: 'https://cdn.sofifa.org/18/teams/'+team_fifa_api_id+'.png'}" onerror="this.src='Images/blank.png'" />
+                        <h2 style="margin: 0;"><span style="margin-right:1%;" data-bind="text: team_long_name"></span><span>[<span data-bind="text: team_short_name "></span>]</span></h2>
+                        <!-- /ko -->
+                    </div>
+                </div>
+
+                <div style="padding-left: 0;" class="page-header">
+                    <h3>Team Seasons</h3>
+                </div>
+                <div class="btn-group-justified">
+                    <!-- ko foreach: seasonsInfo -->
+                    <div class="btn-group" style="padding-left: 1%; padding-right: 1%;">
+                        <a data-bind="text:$data, attr:{id:$data.split('/')[1]-2000}" onclick="getInfoTeams(id), getTeamKits(id), showTeamAtributes(text), showseasonKits(text)" class="btn btn-default"></a>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <hr />
+
+                <div class="container-fluid" id="teamKits" hidden="hidden">
+                    <div class="col-lg-12" id="seasonKits" style="margin-bottom:3%;"></div>
+                    <div class="container-fluid" data-bind="foreach: kits">
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            <img style="margin:auto; display: block;" data-bind="attr:{src:$data}" onerror="this.src='Images/rsz_125323740_1635451753177941_1592717752_n.png'" />
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <h3 style="text-align:center;" class="container col-sm-6 col-md-3 col-lg-3">Home Kit</h3>
+                        <h3 style="text-align:center;" class="container col-sm-6 col-md-3 col-lg-3 ">Away Kit</h3>
+                        <h3 style="text-align:center;" class="container col-sm-6 col-md-3 col-lg-3 ">Goalkeeper Kit</h3>
+                        <h3 style="text-align:center;" class="container col-sm-6 col-md-3 col-lg-3 ">Third Kit</h3>
+                    </div>
+                    <hr />
+
+                    <div class="col-md-12" id="teamAtributtes"></div>
+                    <div class="container-fluid" style="margin-top:70px;" data-bind="foreach : teamInfo">
+                        <div class="page-header" style="text-align:center"><h4>Build Up Play</h4></div>
+                        <div class="container-fluid">
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Speed</label>
+                                <div class="col-md-10" data-bind="foreach : {data:Attributes}">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:buildupplayspeed+'%'},text:'Balanced-'+buildupplayspeed+'%'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Dribbling</label>
+                                <div class="col-md-10" data-bind="foreach : {data:Attributes}">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:buildupplaydribbling+'%'},text:'Normal-'+buildupplaydribbling+'%'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Passing</label>
+                                <div class="col-md-10" data-bind="foreach : {data:Attributes}">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:buildupplaypassing+'%'},text:'Mixed-'+buildupplaypassing+'%'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Positioning</label>
+                                <div class="col-md-10" data-bind="foreach : {data:Attributes}">
+                                    <div data-bind="text:buildupplaypositioningclass"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="page-header" style="text-align:center"><h4>Change Creation</h4></div>
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Passing</label>
+                                <div class="col-md-10" data-bind="foreach : {data:Attributes}">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:chancecreationpassing+'%'},text:'Normal-'+chancecreationpassing+'%'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Crossing</label>
+                                <div class="col-md-10">
+                                    <div class="progress" data-bind="foreach : {data:Attributes}">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:chancecreationcrossing+'%'},text:'Normal-'+chancecreationcrossing+'%'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Shooting</label>
+                                <div class="col-md-10">
+                                    <div class="progress" data-bind="foreach : {data:Attributes}">
+                                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-bind="style:{width:chancecreationshooting+'%'},text:'Normal-'+chancecreationshooting+'%'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <label class="col-md-2" style="text-align: right;">Defender Line</label>
+                                <div class="col-md-10" data-bind="foreach : {data:Attributes}">
+                                    <div data-bind="text:defencedefenderlineclass"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-bind="visible: Matches.length > 0">
+                            <table class="table table-striped col-lg-12">
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1" style="text-align:center">Stage</th>
+                                        <th class="col-md-4" style="text-align:right;">Home</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th class="col-md-4" style="text-align:left;">Away</th>
+                                        <th class="col-md-2" style="text-align:center">Match Date</th>
+                                        <th class="col-md-1" style="text-align:center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: {data:Matches}">
+                                    <tr>
+                                        <td style="text-align:center" class="col-md-1" data-bind="text:stage"></td>
+                                        <td class="col-md-4" style="text-align:right;"><a data-bind="text:home_team.team_long_name,attr:{ href: 'teamDetails.html#'+home_team.id+'#'+home_team.team_fifa_api_id,title:home_team.team_long_name}" onclick="pageReload()"></a><img style="height:35px; margin-right:10%; margin-left:10%;" data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+home_team.team_fifa_api_id+'.png'}" onerror="this.src='http://a.espncdn.com/i/teamlogos/soccer/500/default-team-logo-500.png'" /></td>
+                                        <td style="text-align:center;" data-bind="text:home_team_goal"></td>
+                                        <th>-</th>
+                                        <td style="text-align:center;" data-bind="text:away_team_goal"></td>
+                                        <td class="col-md-4" style="text-align:left;"><img style="height:35px; margin-right:10%; margin-left:10%;" data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+away_team.team_fifa_api_id+'.png'}" onerror="this.src='http://a.espncdn.com/i/teamlogos/soccer/500/default-team-logo-500.png'" /><a data-bind="text:away_team.team_long_name,attr:{ href: 'teamDetails.html#'+away_team.id+'#'+away_team.team_fifa_api_id,title:away_team.team_long_name}" onclick=" pageReload()"></a></td>
+                                        <td class="col-md-2" style="text-align:center;" data-bind="text:date.split('T')[0]"></td>
+                                        <td class="col-md-1" style="text-align:center;"><a data-bind="attr:{ href: 'matches.html#'+id}" class="btn btn-default"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <!-- ko if:error -->
+                <div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+                <!-- /ko -->
+            </div>
+
+            <!-- Footer -->
+            <footer id="myFooter">
+               
+                <div class="footer-social">
+                    <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="JS/teamDetails.js"></script>
+    <script src="JS/sideBar.js"></script>
+</body>
+</html>
